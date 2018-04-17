@@ -6,12 +6,10 @@ This is a game created for the students of Fox Valley Technical College.
 
 The Space Fighter:
 
-| **Project**             | **Description** | **Namespace API** |
+| **Project**             | **Description** | **Namespace** |
 | :---------------------: | :-------------- | :-------------: |
-| **Katana Engine**       | Katana Engine is a library of classes, interfaces, and value types that provides a foundation for developing two-dimensional games in C++. 
-| **Space Fighter**        | Sample is a sample game to research and modify. 
-
-<br>
+| **Katana Engine**       | Katana Engine is a library of classes, interfaces, and value types that provides a foundation for developing two-dimensional games in C++. | KatanaEngine |
+| **Space Fighter**        | Sample is a sample game to research and modify. | Global |
 
 ## Getting Started
 
