@@ -15,41 +15,48 @@ void PlayerShip::LoadContent(ResourceManager *pResourceManager)
 
  void PlayerShip::Update(const GameTime *pGameTime)
  {
+	 // Get the velocity for the direction that the player is trying to go.
 	 Vector2 targetVelocity = m_desiredDirection * GetSpeed() * pGameTime->GetTimeElapsed();
+	 // We can't go from 0-100 mph instantly! This line interpolates the velocity for us.
 	 m_velocity = Vector2::Lerp(m_velocity, targetVelocity, GetResponsiveness());
+	 // Move that direction
 	 TranslatePosition(m_velocity);
 
 	 if (m_isConfinedToScreen)
 	 {
-		 const int PADDING = 4;
+		 const int PADDING = 4; // keep the ship 4 pixels from the edge of the screen
 		 const int TOP = PADDING;
 		 const int LEFT = PADDING;
 		 const int RIGHT = Game::GetScreenWidth() - PADDING;
 		 const int BOTTOM = Game::GetScreenHeight() - PADDING;
 
-		 Vector2 *pPosition = &GetPosition();
-		 if (pPosition->X - GetHalfDimensions().X < LEFT)
+		 Vector2 *pPosition = &GetPosition(); // current position (middle of the ship)
+		 if (pPosition->X - GetHalfDimensions().X < LEFT) // are we past the left edge?
 		 {
+			 // move the ship to the left edge of the screen (keep Y the same)
 			 SetPosition(LEFT + GetHalfDimensions().X, pPosition->Y);
-			 m_velocity.X = 0;
+			 m_velocity.X = 0; // remove any velocity that could potentially
+							   // keep the ship pinned against the edge
 		 }
-		 if (pPosition->X + GetHalfDimensions().X > RIGHT)
+		 if (pPosition->X + GetHalfDimensions().X > RIGHT) // right edge?
 		 {
 			 SetPosition(RIGHT - GetHalfDimensions().X, pPosition->Y);
 			 m_velocity.X = 0;
 		 }
-		 if (pPosition->Y - GetHalfDimensions().Y < TOP)
+		 if (pPosition->Y - GetHalfDimensions().Y < TOP) // top edge?
 		 {
 			 SetPosition(pPosition->X, TOP + GetHalfDimensions().Y);
 			 m_velocity.Y = 0;
 		 }
-		 if (pPosition->Y + GetHalfDimensions().Y > BOTTOM)
+		 if (pPosition->Y + GetHalfDimensions().Y > BOTTOM) // bottom edge?
 		 {
 			 SetPosition(pPosition->X, BOTTOM - GetHalfDimensions().Y);
 			 m_velocity.Y = 0;
 		 }
 	 }
 
+	 // do any updates that a normal ship would do.
+	 // (fire weapons, collide with objects, etc.)
 	 Ship::Update(pGameTime);
  }
 
