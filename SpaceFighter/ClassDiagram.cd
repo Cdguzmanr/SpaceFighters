@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameplayScreen" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAGAAAAAAgAAAAAAAAAAIAAAABAAAAAAAAAAAAQ=</HashCode>
+      <FileName>GameplayScreen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuScreen" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAICAAkAAAAAAAAAAAACAAAAAAEIgAAAAAAQ=</HashCode>
+      <FileName>MainMenuScreen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBQAADAAEChQAgBUEAMAAAAAAYQEAgCABEAAAAIQAAE=</HashCode>
+      <FileName>GameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionManager" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAEAAAQAAAAAAAAAAAAAAAAACAACEAAAAAAAE=</HashCode>
+      <FileName>CollisionManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionType" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAMAAAAAgQAAAQAAAAwAABAAAAAgAAAQAAA=</HashCode>
+      <FileName>CollisionType.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BioEnemyShip" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAIAAAgAAAAAAAAAAACAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>BioEnemyShip.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyShip" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAEAQAAEwgEAAIAAABAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnemyShip.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerShip" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEQAICSAAIEAEwAEIAAAAEAAAAAAAEQQAAAAAgAAAAQ=</HashCode>
+      <FileName>PlayerShip.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ship" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYABCAYABEAA4AEBEIAgBAAgQGAAgBAAAAAAAIAAAA=</HashCode>
+      <FileName>Ship.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Blaster" Collapsed="true">
+    <Position X="6.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCCAAAAAAAAAAACAACAAAAAAAEAAgMAAIAAAAAAAA=</HashCode>
+      <FileName>Blaster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projectile" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACUAADCAAAgKAgBEAgCAAHAAACMAAgAAAACAAAAAIAA=</HashCode>
+      <FileName>Projectile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriggerType" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAAAAIAQAAAQAAAAQAgAQAAAAgAAAQABA=</HashCode>
+      <FileName>TriggerType.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>NAYAgCAAgCAAAgBAkAAAAAAAAAAEIEgAAAAAgAAAAAo=</HashCode>
+      <FileName>Weapon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AATAUACAEAAAAkIIAAAAAgABgAAIEgCDCQAAQAAAAAQ=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level01" Collapsed="true">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQ=</HashCode>
+      <FileName>Level01.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpaceFighter" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAEAAQAAAAAAAAABAQ=</HashCode>
+      <FileName>SpaceFighter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KatanaEngine::Game" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AVQBOCAEAFIAAyAAAMACUAKEADiAAgRAVGAJBAAAJRY=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::GameTime" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAAAAAAAAABAIEAAAAoAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameTime.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::InputState" Collapsed="true">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAASAgAAABAYAQgKQCQAIQAEARACCQRBgCQAAEAAA=</HashCode>
+      <FileName>InputState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Color" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>c+o/AYRdQXu0o/Om4RsQ11WRFIBxxgSLiLR9nTQZl4E=</HashCode>
+      <FileName>Color.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Math" Collapsed="true">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgBAJAAAAMAkAAAAAAAAEAABAAAgAAAAACABCA=</HashCode>
+      <FileName>MathUtil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Vector2" Collapsed="true">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAACABBBAAEEAAAAQBAAACCAABAiACgAEAAYSA=</HashCode>
+      <FileName>Vector2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Point" Collapsed="true">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAhAAGAAAAAQAQAAAEAAAAAAAgAAgAYAA=</HashCode>
+      <FileName>Point.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Region" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAhAAABIABAAAIgEAQIAQAAAAAAAAECAEAYAA=</HashCode>
+      <FileName>Region.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Animation" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUgsEACAoBEAAAAgAIAAIAAACSQAAgAoAAAAAAAABE=</HashCode>
+      <FileName>Animation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Font" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgEAAACAAAAAAARAAABEAIBAAAAAAEAAAABICAAE=</HashCode>
+      <FileName>Font.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::ResourceManager" Collapsed="true">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgAAAAAAAAAAAAAAAGAAAAAAABAAAIAAAAAIAAAA=</HashCode>
+      <FileName>ResourceManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Resource" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAgEAAAAAAAAAAAAAAAAAAAAACAAQQEAABAAIAABA=</HashCode>
+      <FileName>Resource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Texture" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAgEAAAAAAgACFAQAAgABAICAAAACAAAIAAEIAAAA=</HashCode>
+      <FileName>Texture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::RenderTarget" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAQgAAEAAAABAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RenderTarget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::SpriteBatch" Collapsed="true">
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBCgABAhBCAgQAAAAAAAAAAAAEEAAAQAQEAAAAAAA=</HashCode>
+      <FileName>SpriteBatch.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Emitter" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAACAEAAAAAAAAgAQABAAAEkAAAAgAAAAAABU=</HashCode>
+      <FileName>Emitter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::ParticleTemplate" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACAIQAAAICgAAgAIAAACAEAAAAAAAggAIAAAA=</HashCode>
+      <FileName>ParticleTemplate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Particle" Collapsed="true">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBwAAAEAECCECiBQEAEAAAADAIAAAggAJAAAAgkAAAQ=</HashCode>
+      <FileName>Particle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::ParticleManager" Collapsed="true">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQADAAAAAAAAwAAAAAAAAAAACAEAACAAAABAAAAIgA=</HashCode>
+      <FileName>ParticleManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::RotatingParticle" Collapsed="true">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAABAAAAAgAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>RotatingParticle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::ScreenManager" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACACAAABAAgAAgAAAAAAAEAAECAGAAEAJAAAAAgA=</HashCode>
+      <FileName>ScreenManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::Screen" Collapsed="true">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBUCWCCEAAAAhgAgJCIAAAmEBCAsBQAENAgGAATAACY=</HashCode>
+      <FileName>Screen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::MenuScreen" Collapsed="true">
+    <Position X="5.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAEACBAAACAwAQQAAAQAAEAgCAAAAACBAAAQAAAAA=</HashCode>
+      <FileName>MenuScreen.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KatanaEngine::MenuItem" Collapsed="true">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEQCAgEAECIBEjAYAIUUAAKCAAhAAgEAAIgAQAgAAAA=</HashCode>
+      <FileName>MenuItem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="KatanaEngine::GamePadDPad" Collapsed="true">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KatanaEngine::GamePadTriggers" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KatanaEngine::GamePadThumbSticks" Collapsed="true">
+    <Position X="13" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KatanaEngine::GamePadButtons" Collapsed="true">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAQAAAIAAAAAAAAAAAAAAAAAAAAIQEIYAA=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KatanaEngine::GamePadState" Collapsed="true">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAEAAhhABAAAAAAAAACEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="KatanaEngine::ButtonState" Collapsed="true">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KatanaEngine::Button" Collapsed="true">
+    <Position X="9.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAIAAAgAEAAAIkAAAAAEAAAAAAAAAAAAEIAkAYAA=</HashCode>
+      <FileName>GamePadState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KatanaEngine::Key" Collapsed="true">
+    <Position X="13" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aAXGPBSQJIAAQwGEBAJAYCyGwoMCIAijgCCQvv//ZRM=</HashCode>
+      <FileName>KeyState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KatanaEngine::MouseButton" Collapsed="true">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAgAAAAAAAAEAAAAAAAAgAAAAAAAAIAA=</HashCode>
+      <FileName>MouseState.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KatanaEngine::TextAlign" Collapsed="true">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAIAA=</HashCode>
+      <FileName>SpriteBatch.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KatanaEngine::SpriteSortMode" Collapsed="true">
+    <Position X="9.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAABABAAAAAAAAAAAAggA=</HashCode>
+      <FileName>SpriteBatch.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KatanaEngine::BlendState" Collapsed="true">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SpriteBatch.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
