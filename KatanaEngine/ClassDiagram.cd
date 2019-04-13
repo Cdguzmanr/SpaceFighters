@@ -203,54 +203,5 @@
       <FileName>GamePadState.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Enum Name="KatanaEngine::ButtonState" Collapsed="true">
-    <Position X="11.25" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GamePadState.h</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KatanaEngine::Button" Collapsed="true">
-    <Position X="9.5" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAABAIAAAgAEAAAIkAAAAAEAAAAAAAAAAAAEIAkAYAA=</HashCode>
-      <FileName>GamePadState.h</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KatanaEngine::Key" Collapsed="true">
-    <Position X="13" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>aAXGPBSQJIAAQwGEBAJAYCyGwoMCIAijgCCQvv//ZRM=</HashCode>
-      <FileName>KeyState.h</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KatanaEngine::MouseButton" Collapsed="true">
-    <Position X="7.75" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAgAAAAAAAAEAAAAAAAAgAAAAAAAAIAA=</HashCode>
-      <FileName>MouseState.h</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KatanaEngine::TextAlign" Collapsed="true">
-    <Position X="11.25" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAIAA=</HashCode>
-      <FileName>SpriteBatch.h</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KatanaEngine::SpriteSortMode" Collapsed="true">
-    <Position X="9.5" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAABABAAAAAAAAAAAAggA=</HashCode>
-      <FileName>SpriteBatch.h</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KatanaEngine::BlendState" Collapsed="true">
-    <Position X="7.75" Y="6" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SpriteBatch.h</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
