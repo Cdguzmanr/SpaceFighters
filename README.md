@@ -27,10 +27,10 @@ If the game won't compile, update the sdk:
 If the game compiles but won't run (you get an error message), change the startup project:
 - Right click on the SpaceFighter project and select "Set as StartUp Project"
 
-## Class Diagrams
+### Class Diagrams
 
-### Space Fighter
+#### Space Fighter
 ![picture](Space-Fighter.jpg)
 
-### Katana Engine
+#### Katana Engine
 ![picture](KatanaEngine.jpg)
