@@ -185,7 +185,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="ClassDiagram.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
