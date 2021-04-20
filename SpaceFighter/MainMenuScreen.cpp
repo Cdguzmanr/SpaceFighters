@@ -46,7 +46,7 @@ void MainMenuScreen::LoadContent(ResourceManager *pResourceManager)
 	const int COUNT = 2;
 	MenuItem *pItem;
 	Font::SetLoadSize(20, true);
-	Font *pFont = pResourceManager->Load<Font>("Fonts\\Ethnocentric.ttf");
+	Font *pFont = pResourceManager->Load<Font>("Fonts\\arial.ttf");
 
 	SetDisplayCount(COUNT);
 
