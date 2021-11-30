@@ -68,10 +68,10 @@ namespace KatanaEngine
 
 		static bool s_alAddonInitialized;
 
-		ALLEGRO_BITMAP *m_pBitmap;
+		ALLEGRO_BITMAP *m_pBitmap = nullptr;
 
-		int m_width;
-		int m_height;
+		int m_width = 0;
+		int m_height = 0;
 
 		Vector2 m_size;
 		Vector2 m_center;

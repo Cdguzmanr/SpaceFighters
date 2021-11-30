@@ -9,6 +9,7 @@ public:
 	CollisionType() { m_value = 0; }
 	virtual ~CollisionType() { }
 
+	
 	static const CollisionType NONE;
 
 	static const CollisionType PLAYER;

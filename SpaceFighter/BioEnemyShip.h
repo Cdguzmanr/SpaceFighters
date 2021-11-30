@@ -11,7 +11,7 @@ public:
 	BioEnemyShip();
 	virtual ~BioEnemyShip() { }
 
-	void SetTexture(Texture *pTexture) { m_pTexture = pTexture; }
+	virtual void SetTexture(Texture *pTexture) { m_pTexture = pTexture; }
 
 	virtual void Update(const GameTime *pGameTime);
 
@@ -20,6 +20,6 @@ public:
 
 private:
 
-	Texture *m_pTexture;
+	Texture *m_pTexture = nullptr;
 
 };

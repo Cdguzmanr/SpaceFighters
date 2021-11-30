@@ -48,7 +48,7 @@ public:
 		for (; m_it != m_gameObjects.end(); m_it++)
 		{
 			GameObject *pGameObject = *m_it;
-			if (!pGameObject->IsActive()) continue;
+			if (pGameObject->IsActive()) continue;
 
 			squaredDistance = (position - pGameObject->GetPosition()).LengthSquared();
 			if (squaredDistance < squaredRange)

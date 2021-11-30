@@ -30,6 +30,7 @@ void SpaceFighter::Draw(SpriteBatch *pSpriteBatch)
 	DisplayFrameRate();
 }
 
+
 void SpaceFighter::LoadContent(ResourceManager *pResourceManager) 
 {
 	// Load static resources
