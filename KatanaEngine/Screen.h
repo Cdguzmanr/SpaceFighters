@@ -180,24 +180,24 @@ namespace KatanaEngine
 		void *m_onExit;
 		void *m_onRemove;
 
-		bool m_handleInputBelow;
-		bool m_updateBelow;
-		bool m_drawBelow;
-		bool m_isExiting;
+		bool m_handleInputBelow = false;
+		bool m_updateBelow = false;
+		bool m_drawBelow = false;
+		bool m_isExiting = false;
 
 		bool m_needsToBeRemoved;
 
-		double m_transitionInTime;
-		double m_transitionOutTime;
+		double m_transitionInTime = 0;
+		double m_transitionOutTime = 0;
 
-		ScreenTransition m_transition;
+		ScreenTransition m_transition = ScreenTransition::NONE;
 
-		float m_transitionValue;
-		double m_transitionTime;
+		float m_transitionValue = 0;
+		double m_transitionTime = 0;
 
-		ScreenManager *m_pScreenManager;
+		ScreenManager *m_pScreenManager = nullptr;
 
-		RenderTarget *m_pRenderTarget;
+		RenderTarget *m_pRenderTarget = nullptr;
 
 		void TransitionIn();
 		void TransitionOut();

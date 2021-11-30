@@ -129,9 +129,9 @@ namespace KatanaEngine
 		}
 
 
-		int X;		/**< @brief The left side of the region. */
-		int Y;		/**< @brief The top of the region. */
-		int Width;	/**< @brief The width of the region. */
-		int Height;	/**< @brief The height of the region. */
+		int X = 0;		/**< @brief The left side of the region. */
+		int Y = 0;		/**< @brief The top of the region. */
+		int Width = 1;	/**< @brief The width of the region. */
+		int Height = 1;	/**< @brief The height of the region. */
 	};
 }

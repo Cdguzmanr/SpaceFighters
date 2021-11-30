@@ -85,18 +85,18 @@ namespace KatanaEngine
 
 		static uint32_t s_count;
 
-		uint32_t m_index;
+		uint32_t m_index = 0;
 
-		ParticleTemplate *m_pTemplate;
+		ParticleTemplate *m_pTemplate = nullptr;
 
-		float m_lifespan;
-		float m_lifeSeconds;
+		float m_lifespan = 0;
+		float m_lifeSeconds = 0;
 
 		Vector2 m_position;
 		Color m_color;
 
-		float m_alpha;
-		float m_rotation;
+		float m_alpha = 0;
+		float m_rotation = 0;
 		Vector2 m_scale;
 
 		virtual void Activate() { m_lifeSeconds = m_lifespan; }

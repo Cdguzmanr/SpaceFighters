@@ -74,8 +74,8 @@ namespace KatanaEngine
 
 	private:
 
-		unsigned short m_id;
+		unsigned short m_id = 0;
 
-		ResourceManager *m_pResourceManager;
+		ResourceManager *m_pResourceManager = nullptr;
 	};
 }

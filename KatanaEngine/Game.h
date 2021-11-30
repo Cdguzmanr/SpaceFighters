@@ -135,28 +135,28 @@ namespace KatanaEngine
 		static std::string s_windowTitle;
 		static std::string s_contentDirectory;
 
-		bool m_isInitialized;
-		bool m_isRunning;
-		bool m_isFullScreen;
-		bool m_requireOpenGL;
+		bool m_isInitialized = false;
+		bool m_isRunning = false;
+		bool m_isFullScreen = false;
+		bool m_requireOpenGL = false;
 
-		double m_targetFramesPerSecond;
-		double m_inverseTargetFrames;
-		double m_actualFramesPerSec;
-		double m_currentTime;
-		double m_previousTime;
-		float m_frameCounter;
+		double m_targetFramesPerSecond = 0;
+		double m_inverseTargetFrames = 0;
+		double m_actualFramesPerSec = 0;
+		double m_currentTime = 0;
+		double m_previousTime = 0;
+		float m_frameCounter = 0;
 
-		GameTime *m_pGameTime;
-		InputState *m_pInput;
+		GameTime *m_pGameTime = nullptr;
+		InputState *m_pInput = nullptr;
 
-		SpriteBatch *m_pSpriteBatch;
+		SpriteBatch *m_pSpriteBatch = nullptr;
 
-		ScreenManager *m_pScreenManager;
-		ParticleManager *m_pParticleManager;
-		ResourceManager *m_pResourceManager;
+		ScreenManager *m_pScreenManager = nullptr;
+		ParticleManager *m_pParticleManager = nullptr;
+		ResourceManager *m_pResourceManager = nullptr;
 
-		Font *m_pFrameCounterFont;
+		Font *m_pFrameCounterFont = nullptr;
 
 		bool IsRunning() { return m_isRunning; }
 	};

@@ -100,14 +100,14 @@ namespace KatanaEngine
 
 	private:
 
-		Texture *m_pTexture;
+		Texture *m_pTexture = nullptr;
 
-		float m_pParticleLifespan;
+		float m_pParticleLifespan = 0;
 
 		std::vector<Particle *> m_particles;
 		std::vector<Particle *>::iterator m_it;
 
-		bool m_poolExpands;
+		bool m_poolExpands = false;
 
 	};
 }

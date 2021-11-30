@@ -35,7 +35,7 @@ namespace KatanaEngine
 
 	private:
 
-		float m_rotationVelocity;
+		float m_rotationVelocity = 0;
 
 	};
 }

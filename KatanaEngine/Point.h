@@ -97,8 +97,8 @@ namespace KatanaEngine
 		bool operator!=(const Point &point) const;
 
 
-		int X;	/**< @brief The x-coordinate of the point. */
-		int Y;	/**< @brief The y-coordinate of the point. */
+		int X = 0;	/**< @brief The x-coordinate of the point. */
+		int Y = 0;	/**< @brief The y-coordinate of the point. */
 
 	};
 }

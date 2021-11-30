@@ -51,13 +51,10 @@ namespace KatanaEngine
 
 	private:
 
-		Game *m_pGame;
+		Game *m_pGame = nullptr;
 
 		std::vector<Particle *> m_particles;
 		std::vector<Particle *>::iterator m_it;
-
-		double temp;
-
 
 	};
 }

@@ -184,8 +184,8 @@ namespace KatanaEngine
 		bool operator!=(const Vector2 &vector) const;
 		
 
-		float X;	/**< @brief The x-coordinate of the vector. */
-		float Y;	/**< @brief The y-coordinate of the vector. */
+		float X = 0;	/**< @brief The x-coordinate of the vector. */
+		float Y = 0;	/**< @brief The y-coordinate of the vector. */
 	
 	};
 }

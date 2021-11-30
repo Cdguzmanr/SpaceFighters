@@ -77,15 +77,15 @@ namespace KatanaEngine
 
 	private:
 
-		float m_output;
+		float m_output = 0;
 
-		float m_leftoverParticles;
+		float m_leftoverParticles = 0;
 
-		int m_particlesPerSecond;
+		int m_particlesPerSecond = 0;
 
-		ParticleManager *m_pManager;
+		ParticleManager *m_pManager = nullptr;
 
-		ParticleTemplate *m_pTemplate;
+		ParticleTemplate *m_pTemplate = nullptr;
 
 		Vector2 m_position;
 		Vector2 m_previousPosition;
