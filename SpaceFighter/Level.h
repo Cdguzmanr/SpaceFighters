@@ -73,12 +73,17 @@ protected:
 
 	virtual CollisionManager* GetCollisionManager() { return m_pCollisionManager; }
 
+	virtual void SetBackgroundAudio(AudioSample* pAudio) { m_pAudio = pAudio; }
+
+	virtual AudioSample* GetBackgroundAudio() { return m_pAudio; }
 
 private:
 
 	CollisionManager* m_pCollisionManager = nullptr;
 
 	GameplayScreen* m_pGameplayScreen = nullptr;
+
+	AudioSample* m_pAudio = nullptr;
 
 	std::vector<GameObject*>* m_pSectors;
 

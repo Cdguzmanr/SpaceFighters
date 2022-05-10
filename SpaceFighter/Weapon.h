@@ -40,6 +40,9 @@ public:
 
 	virtual bool IsActive() const { return m_isActive && m_pGameObject->IsActive(); }
 
+	virtual void SetFireSound(AudioSample* pSound) { m_pFireSound = pSound; }
+
+	virtual AudioSample* GetFireSound() { return m_pFireSound; }
 
 protected:
 
@@ -72,6 +75,8 @@ private:
 
 	std::vector<Projectile *>::iterator m_projectileIt;
 	std::vector<Projectile *> *m_pProjectiles;
+
+	AudioSample* m_pFireSound = nullptr;
 
 };
 

@@ -51,6 +51,8 @@ namespace KatanaEngine
 
 		m_pSpriteBatch = new SpriteBatch();
 
+		AudioSample::ReserveSamples(10);
+
 		srand(time(nullptr));
 	}
 

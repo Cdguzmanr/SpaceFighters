@@ -38,6 +38,9 @@ public:
 				Projectile *pProjectile = GetProjectile();
 				if (pProjectile)
 				{
+					AudioSample* pAudio = GetFireSound();
+					if (pAudio) pAudio->Play();
+
 					pProjectile->Activate(GetPosition(), true);
 					m_cooldown = m_cooldownSeconds;
 				}

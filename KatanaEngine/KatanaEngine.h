@@ -57,6 +57,7 @@
 
 /* Resource Management */
 #include "Resource.h"
+#include "AudioSample.h"
 #include "Font.h"
 #include "Texture.h"
 #include "Animation.h"

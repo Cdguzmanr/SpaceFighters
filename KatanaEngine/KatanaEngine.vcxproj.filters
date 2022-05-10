@@ -3,31 +3,39 @@
   <ItemGroup>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Core">
       <UniqueIdentifier>{5412b08a-5c39-4276-81f6-953b6f3e5327}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Core\Input">
       <UniqueIdentifier>{a95b630d-3338-4b13-a2bc-27bc55860bf0}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Core\Math">
       <UniqueIdentifier>{7d72b14f-71bc-4303-af55-6807d909bc0a}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Core\Resources">
       <UniqueIdentifier>{cc14be77-0378-4284-81db-b69ae1c76276}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Particles">
       <UniqueIdentifier>{ca8a10a8-59b8-4003-8602-d16b60c4c3c6}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Screens">
       <UniqueIdentifier>{60ab46a1-2bf3-42c6-9a9c-39a618af70b5}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Screens\Menus">
       <UniqueIdentifier>{a9951de1-0ab2-4d3d-9357-1ad86e1a6ec7}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
     <Filter Include="Source Files\Core\Graphics">
       <UniqueIdentifier>{fb788e05-a986-49c1-9d0b-984d681517e3}</UniqueIdentifier>
+      <Extensions>cpp;h;</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +104,9 @@
     </ClCompile>
     <ClCompile Include="KatanaEngine.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioSample.cpp">
+      <Filter>Source Files\Core\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="RotatingParticle.h">
       <Filter>Source Files\Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioSample.h">
+      <Filter>Source Files\Core\Resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
