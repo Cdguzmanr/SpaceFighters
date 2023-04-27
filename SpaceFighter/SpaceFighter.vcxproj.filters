@@ -95,7 +95,7 @@
       <Filter>Source Files\Levels</Filter>
     </ClCompile>
     <ClCompile Include="PowerUp.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game Objects\Power Ups</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
