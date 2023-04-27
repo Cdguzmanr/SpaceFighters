@@ -18,6 +18,8 @@ public:
 	static const CollisionType SHIP;
 	static const CollisionType PROJECTILE;
 
+	static const CollisionType PowerUp;
+
 
 	CollisionType &CollisionType::operator=(const CollisionType &type)
 	{
