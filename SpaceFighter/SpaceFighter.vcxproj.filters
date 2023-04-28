@@ -151,7 +151,7 @@
       <Filter>Source Files\Levels</Filter>
     </ClInclude>
     <ClInclude Include="PowerUp.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game Objects\Power Ups</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

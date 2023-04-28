@@ -11,7 +11,7 @@ public:
 	Blaster(const bool isActive) : Weapon(isActive)
 	{
 		m_cooldown = 0;
-		m_cooldownSeconds = 0.35;
+		 m_cooldownSeconds = 0.35;
 	}
 
 	virtual ~Blaster() { }
@@ -43,6 +43,7 @@ public:
 
 					pProjectile->Activate(GetPosition(), true);
 					m_cooldown = m_cooldownSeconds;
+					
 				}
 			}
 		}
@@ -52,6 +53,9 @@ public:
 private:
 
 	float m_cooldown;
-	float m_cooldownSeconds;
+	
+//protected:
+public: //temporarily made Blaster::m_cooldownSeconds public for testing //todo undo change Blaster.h line 58
+	static float m_cooldownSeconds;//unsure if it should be static
 
 };

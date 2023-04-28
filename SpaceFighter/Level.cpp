@@ -2,7 +2,7 @@
 #include "Level.h"
 #include "EnemyShip.h"
 #include "Blaster.h"
-
+#include "PowerUp.h"
 
 // Collision Callback Functions
 void PlayerShootsEnemy(GameObject *pObject1, GameObject *pObject2)

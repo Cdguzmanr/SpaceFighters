@@ -1,5 +1,6 @@
 
 #include "PlayerShip.h"
+#include "PowerUp.h"
 
 
 void PlayerShip::LoadContent(ResourceManager* pResourceManager)
@@ -58,7 +59,7 @@ void PlayerShip::Update(const GameTime* pGameTime)
 			m_velocity.Y = 0;
 		}
 	}
-
+	PowerUp::RapidFiring();
 	// do any updates that a normal ship would do.
 	// (fire weapons, collide with objects, etc.)
 	Ship::Update(pGameTime);
