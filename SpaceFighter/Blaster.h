@@ -10,8 +10,9 @@ public:
 
 	Blaster(const bool isActive) : Weapon(isActive)
 	{
-		m_cooldown = 0;
-		m_cooldownSeconds = 0.35;
+		// Assignment 6.B Wepon cooldown -- Shoot Faster 
+		m_cooldown = 0; 
+		m_cooldownSeconds = 0.25; // old: 0.35
 	}
 
 	virtual ~Blaster() { }

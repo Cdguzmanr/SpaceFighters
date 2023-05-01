@@ -37,6 +37,9 @@
       <UniqueIdentifier>{c089d2d3-9dc9-4cba-a1d0-c222f814133c}</UniqueIdentifier>
       <Extensions>cpp;h;</Extensions>
     </Filter>
+    <Filter Include="Source Files\Game Objects\PowerUps">
+      <UniqueIdentifier>{d286b49f-0d25-4919-b969-a5b3e364a1f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -91,6 +94,9 @@
     <ClCompile Include="Level02.cpp">
       <Filter>Source Files\Levels</Filter>
     </ClCompile>
+    <ClCompile Include="PowerUp.cpp">
+      <Filter>Source Files\Game Objects\PowerUps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenuScreen.h">
@@ -143,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="Level02.h">
       <Filter>Source Files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUp.h">
+      <Filter>Source Files\Game Objects\PowerUps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

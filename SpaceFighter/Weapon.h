@@ -24,7 +24,7 @@ public:
 
 	virtual void Draw(SpriteBatch *pSpriteBatch) { };
 
-	virtual void Fire(TriggerType triggerType) = 0;
+	virtual void Fire(TriggerType triggerType) = 0; // Pure Virtual
 
 	virtual void SetGameObject(GameObject *pGameObject) { m_pGameObject = pGameObject; }
 
