@@ -33,6 +33,8 @@ public:
 
 	virtual void SetGameplayScreen(GameplayScreen* pGameplayScreen) { m_pGameplayScreen = pGameplayScreen; }
 
+	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }
+
 	template <typename T>
 	T* GetClosestObject(const Vector2 position, const float range)
 	{
@@ -96,6 +98,7 @@ private:
 	std::vector<GameObject*>::iterator m_gameObjectIt;
 
 	PlayerShip* m_pPlayerShip;
+	Texture* m_pPowerUpTexture;
 	std::vector<Projectile*> m_projectiles;
 
 
