@@ -14,6 +14,7 @@
 
 #include "KatanaEngine.h"
 
+
 namespace KatanaEngine
 {
 	bool Texture::s_alAddonInitialized = false;
@@ -57,4 +58,6 @@ namespace KatanaEngine
 			m_center = m_size / 2;
 		}
 	}
+
+
 }

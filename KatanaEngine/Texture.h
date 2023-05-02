@@ -23,6 +23,8 @@ namespace KatanaEngine
 	public:
 
 		Texture();
+		//Texture(int width, int height, Color color);
+
 		virtual ~Texture();
 
 		/** @brief Load the desired font into memory.
@@ -46,6 +48,8 @@ namespace KatanaEngine
 		/** @brief Gets the center position of the texture.
 			@return Returns the center position. */
 		Vector2 GetCenter() const { return m_center; }
+
+
 
 		/** @brief Used to determine if the texture is cloneable.
 			@return Returns true if the texture is clonable, false otherwise.

@@ -152,6 +152,7 @@ void Level::UpdateSectorPosition(GameObject *pGameObject)
 }
 
 
+
 void Level::CheckCollisions(std::vector<GameObject *> &gameObjects)
 {
 	const unsigned int objectCount = (unsigned int)gameObjects.size();
@@ -173,7 +174,7 @@ void Level::CheckCollisions(std::vector<GameObject *> &gameObjects)
 					m_pCollisionManager->CheckCollision(pFirst, pSecond);
 				}
 			}
-		}
+		
 	}
 }
 
