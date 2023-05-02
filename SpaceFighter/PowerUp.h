@@ -1,35 +1,65 @@
 #pragma once
+
 #include "GameObject.h"
-#include "Blaster.h"
-class PowerUp : public Blaster
+#include "BioEnemyShip.h"
+#include "PlayerShip.h"
+
+class PowerUp : public GameObject
 {
-//protected:
+	//protected:
 public:
-	float RapidFireRate;//unsure if it should be static
-public:
-	enum powerUp {
-		RapidFire,
-		SpeedBoost
+	enum PowerUpType {
+		RapidFire = 1,
+		SpeedBoost,
+		Shield,
+		ExtraDamage
 	};
 
 	//todo get the methods built
-	
+
 	PowerUp();
-	virtual void Draw();//Andres
-	virtual void Update();
-	virtual void Activate(); //Gerald
-	virtual void SetCooldownSeconds();//don't think should be static
-	virtual void  RapidFiring();//don't think should be static
+
+
+	virtual void SetCooldownBoost(const float boost);
+	virtual void RandRapidFiring(PlayerShip* playership);
 	virtual void SpeedBoosting();
-	
 
+	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
-	 
+	virtual void Update(const GameTime* pGameTime);
+
+	virtual void Draw(SpriteBatch* pSpriteBatch);
+
+	virtual CollisionType GetCollisionType() const { return CollisionType::POWERUP | CollisionType::PLAYER; }
+
+	virtual void Initialize(const Vector2 position, const double delaySeconds);
+
+	virtual float GetSpeed() const { return m_speed; }
+
+	virtual void SetSpeed(const float speed) { m_speed = speed; }
+
+	virtual PowerUpType GetType() const { return m_type; }
+
+	virtual void SetType(const PowerUpType type) { m_type = type; }
+
+	virtual std::string ToString() const { return "PowerUp"; }
+
 private:
-	float PowerUpTimer;
-	const int min = 117;//unsure if it should be static
-	const int max = 2625;//unsure if it should be static
-	//line 58 of blaster.h was made static not sure if it should be
+	double m_delaySeconds;
+
+	double m_activationSeconds;
+
+	float m_speed;
+
+	float m_duration;
+
+	PowerUpType m_type;
+
+	Texture* m_pTexture = nullptr;
+
+	float min;
+	float max;
+	float RandRapidFireRate;
 
 };
 

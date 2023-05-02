@@ -26,6 +26,7 @@ public:
 	virtual CollisionType GetCollisionType() const { return CollisionType::ENEMY | CollisionType::SHIP; }
 
 
+
 protected:
 
 	virtual double GetDelaySeconds() const { return m_delaySeconds; }

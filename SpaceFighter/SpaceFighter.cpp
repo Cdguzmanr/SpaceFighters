@@ -16,9 +16,9 @@ SpaceFighter::SpaceFighter()
 
 	SetResourceDirectory("..\\SpaceFighter\\Content\\");
 
-	// Font for displaying the frame rate
+	// Font for displaying the frame rate // Calibribd
 	Font::SetLoadSize(18, true);
-	Font *pFont = GetResourceManager()->Load<Font>("Fonts\\Arialbd.ttf", false);
+	Font *pFont = GetResourceManager()->Load<Font>("Fonts\\Ethnocentric.ttf", false); // Fonts\\Arialbd.ttf
 	SetFrameCounterFont(pFont);
 }
 

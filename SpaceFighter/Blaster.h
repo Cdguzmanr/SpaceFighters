@@ -10,8 +10,9 @@ public:
 
 	Blaster(const bool isActive) : Weapon(isActive)
 	{
-		m_cooldown = 0;
-		 m_cooldownSeconds = 0.35;
+		// Assignment 6.B Wepon cooldown -- Shoot Faster 
+		m_cooldown = 0; 
+		m_cooldownSeconds = 0.35 / m_cooldownBoost; // old: 0.35
 	}
 
 	virtual ~Blaster() { }
@@ -27,7 +28,7 @@ public:
 
 	virtual float GetCooldownSeconds() { return m_cooldownSeconds; }
 
-	virtual void SetCooldownSeconds(const float seconds) { m_cooldownSeconds = seconds; }
+	virtual void SetCooldownBoost(const float boost) { m_cooldownBoost = boost; }
 
 	virtual void Fire(TriggerType triggerType)
 	{
@@ -53,9 +54,7 @@ public:
 private:
 
 	float m_cooldown;
-	
-//protected:
-public: //temporarily made Blaster::m_cooldownSeconds public for testing //todo undo change Blaster.h line 58
-	float m_cooldownSeconds;//unsure if it should be static
+	float m_cooldownSeconds;
+	float m_cooldownBoost;
 
 };

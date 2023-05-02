@@ -30,7 +30,7 @@ MainMenuScreen::MainMenuScreen()
 
 	SetRemoveCallback(OnScreenRemove);
 
-	SetTransitionInTime(1.0f);
+	SetTransitionInTime(3.0f); // Default - 1.0
 	SetTransitionOutTime(0.5f);
 
 	Show(); // Show the screen
@@ -45,20 +45,20 @@ void MainMenuScreen::LoadContent(ResourceManager *pResourceManager)
 	// Create the menu items
 	const int COUNT = 2;
 	MenuItem *pItem;
-	Font::SetLoadSize(20, true);
-	Font *pFont = pResourceManager->Load<Font>("Fonts\\arial.ttf");
+	Font::SetLoadSize(20, true);					// Changed Font  // arial.ttf
+	Font *pFont = pResourceManager->Load<Font>("Fonts\\Ethnocentric.ttf"); 
 
 	SetDisplayCount(COUNT);
 
 	enum Items { START_GAME, QUIT };
-	std::string text[COUNT] = { "Start Game", "Quit" };
+	std::string text[COUNT] = { "Start Game", "Quit"};
 
 	for (int i = 0; i < COUNT; i++)
 	{
 		pItem = new MenuItem(text[i]);
 		pItem->SetPosition(Vector2(100, 100 + 50 * i));
 		pItem->SetFont(pFont);
-		pItem->SetColor(Color::Blue);
+		pItem->SetColor(Color::Blue); // ??
 		pItem->SetSelected(i == 0);
 		AddMenuItem(pItem);
 	}
@@ -77,8 +77,8 @@ void MainMenuScreen::Update(const GameTime *pGameTime)
 		pItem = GetMenuItem(i);
 		pItem->SetAlpha(GetAlpha());
 
-		if (pItem->IsSelected()) pItem->SetColor(Color::White);
-		else pItem->SetColor(Color::Blue);
+		if (pItem->IsSelected()) pItem->SetColor(Color::Cyan);
+		else pItem->SetColor(Color::Gold);
 	}
 
 	MenuScreen::Update(pGameTime);
