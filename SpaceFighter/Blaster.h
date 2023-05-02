@@ -56,6 +56,6 @@ private:
 	
 //protected:
 public: //temporarily made Blaster::m_cooldownSeconds public for testing //todo undo change Blaster.h line 58
-	static float m_cooldownSeconds;//unsure if it should be static
+	float m_cooldownSeconds;//unsure if it should be static
 
 };
