@@ -20,9 +20,9 @@ public:
 	PowerUp();
 
 
-	virtual void SetCooldownBoost(const float boost);
+	//virtual void SetCooldownBoost(const float boost);
 	virtual void RandRapidFiring(PlayerShip* playership);
-	virtual void SpeedBoosting();
+	virtual void SpeedBooster();
 
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
