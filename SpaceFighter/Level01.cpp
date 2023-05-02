@@ -8,6 +8,7 @@ void Level01::LoadContent(ResourceManager *pResourceManager)
 {
 	// Setup enemy ships
 	Texture *pTexture = pResourceManager->Load<Texture>("Textures\\BioEnemyShip.png");
+	
 
 	const int COUNT = 21;
 

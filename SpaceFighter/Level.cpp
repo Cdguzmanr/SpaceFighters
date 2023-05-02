@@ -2,15 +2,25 @@
 #include "Level.h"
 #include "EnemyShip.h"
 #include "Blaster.h"
+#include "PowerUp.h"
+
 
 
 // Collision Callback Functions
 void PlayerShootsEnemy(GameObject *pObject1, GameObject *pObject2)
 {
+	
 	bool m = pObject1->HasMask(CollisionType::ENEMY);
 	EnemyShip *pEnemyShip = (EnemyShip *)((m) ? pObject1 : pObject2);
 	Projectile *pPlayerProjectile = (Projectile *)((!m) ? pObject1 : pObject2);
 	pEnemyShip->Hit(pPlayerProjectile->GetDamage());
+	if (!pEnemyShip->IsActive())
+	{
+		PowerUp* pPowerUp = new PowerUp();
+		pPowerUp->SetTexture(pEnemyShip->GetCurrentLevel()->GetPowerUpTexture());
+		pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
+		pEnemyShip->GetCurrentLevel()->AddGameObject(pPowerUp);
+	}
 	pPlayerProjectile->Deactivate();
 }
 
@@ -21,6 +31,16 @@ void PlayerCollidesWithEnemy(GameObject *pObject1, GameObject *pObject2)
 	EnemyShip *pEnemyShip = (EnemyShip *)((!m) ? pObject1 : pObject2);
 	pPlayerShip->Hit(std::numeric_limits<float>::max());
 	pEnemyShip->Hit(std::numeric_limits<float>::max());
+}
+
+void PlayerCollidesWithPowerUp(GameObject* pObject1, GameObject* pObject2)
+{
+	bool m = pObject1->HasMask(CollisionType::PLAYER);
+	PlayerShip* pPlayerShip = (PlayerShip*)((m) ? pObject1 : pObject2);
+	PowerUp* pPowerUp = (PowerUp*)((!m) ? pObject1 : pObject2);
+	// TODO: Effect on PlayerShip
+	pPowerUp->Deactivate();
+	
 }
 
 
@@ -62,10 +82,12 @@ Level::Level()
 	CollisionType playerShip = (CollisionType::PLAYER | CollisionType::SHIP);
 	CollisionType playerProjectile = (CollisionType::PLAYER | CollisionType::PROJECTILE);
 	CollisionType enemyShip = (CollisionType::ENEMY | CollisionType::SHIP);
+	CollisionType powerUp = (CollisionType::POWERUP | CollisionType::PLAYER);
 
 	pC->AddNonCollisionType(playerShip, playerProjectile);
 	pC->AddCollisionType(playerProjectile, enemyShip, PlayerShootsEnemy);
 	pC->AddCollisionType(playerShip, enemyShip, PlayerCollidesWithEnemy);
+	pC->AddCollisionType(playerShip, powerUp, PlayerCollidesWithPowerUp);
 }
 
 Level::~Level()
@@ -84,6 +106,7 @@ Level::~Level()
 void Level::LoadContent(ResourceManager *pResourceManager)
 {
 	m_pPlayerShip->LoadContent(pResourceManager);
+	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png");
 }
 
 
@@ -114,6 +137,9 @@ void Level::Update(const GameTime *pGameTime)
 			CheckCollisions(m_pSectors[i]);
 		}
 	}
+
+	
+
 }
 
 

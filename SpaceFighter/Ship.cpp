@@ -33,7 +33,9 @@ void Ship::Hit(const float damage)
 
 		if (m_hitPoints <= 0)
 		{
+			
 			GameObject::Deactivate();
+			
 		}
 	}
 }
