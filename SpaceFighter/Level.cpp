@@ -104,9 +104,15 @@ Level::~Level()
 
 
 void Level::LoadContent(ResourceManager *pResourceManager)
-{
+{	
 	m_pPlayerShip->LoadContent(pResourceManager);
+
+	// Load background texture
+	m_pTexture = pResourceManager->Load<Texture>("Textures\\background-space.png");
+	m_texturePosition = Game::GetScreenCenter();
+
 	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png");
+
 }
 
 
@@ -200,13 +206,16 @@ void Level::CheckCollisions(std::vector<GameObject *> &gameObjects)
 					m_pCollisionManager->CheckCollision(pFirst, pSecond);
 				}
 			}
-		
+		}
 	}
 }
 
 void Level::Draw(SpriteBatch *pSpriteBatch)
 {
 	pSpriteBatch->Begin();
+
+	pSpriteBatch->Draw(m_pTexture, m_texturePosition, Color::White, m_pTexture->GetCenter()); // Draw background
+
 
 	m_gameObjectIt = m_gameObjects.begin();
 	for (; m_gameObjectIt != m_gameObjects.end(); m_gameObjectIt++)

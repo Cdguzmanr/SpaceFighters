@@ -96,6 +96,12 @@ private:
 
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*>::iterator m_gameObjectIt;
+	
+	//Background
+	Texture* m_pTexture;
+
+	Vector2 m_texturePosition;
+
 
 	PlayerShip* m_pPlayerShip;
 	Texture* m_pPowerUpTexture;
