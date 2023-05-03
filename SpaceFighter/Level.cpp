@@ -36,9 +36,22 @@ void PlayerCollidesWithEnemy(GameObject *pObject1, GameObject *pObject2)
 void PlayerCollidesWithPowerUp(GameObject* pObject1, GameObject* pObject2)
 {
 	bool m = pObject1->HasMask(CollisionType::PLAYER);
+
+	// Calls Objects to set sprites
 	PlayerShip* pPlayerShip = (PlayerShip*)((m) ? pObject1 : pObject2);
+	Projectile* pProjectile = (Projectile*)((m) ? pObject1 : pObject2);
 	PowerUp* pPowerUp = (PowerUp*)((!m) ? pObject1 : pObject2);
+	
 	// TODO: Effect on PlayerShip
+		
+		// 1- Change Ship and bullet Textures
+	if (pPlayerShip->IsActive())
+	{
+
+		pPlayerShip->SetTexture(pPlayerShip->GetCurrentLevel()->GetPowerUpShipTexture());
+		pProjectile->SetTexture(pProjectile->GetCurrentLevel()->GetPowerUpBulletTexture());
+	}
+
 	pPowerUp->Deactivate();
 	
 }
@@ -113,6 +126,11 @@ void Level::LoadContent(ResourceManager *pResourceManager)
 
 	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png");
 
+
+	// Load textures for Power ups
+	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PowerUp1.png");
+	m_pPowerUpBulletTexture = pResourceManager->Load<Texture>("Textures\\BulletRed.png");
+	m_pPowerUpShipTexture = pResourceManager->Load<Texture>("Textures\\PlayerShipRed.png");
 }
 
 
