@@ -35,6 +35,10 @@ public:
 
 	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }
 
+	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
+
+	virtual Texture* GetPowerUpShipTexture() { return m_pPowerUpShipTexture; }
+
 	template <typename T>
 	T* GetClosestObject(const Vector2 position, const float range)
 	{
@@ -98,7 +102,12 @@ private:
 	std::vector<GameObject*>::iterator m_gameObjectIt;
 
 	PlayerShip* m_pPlayerShip;
+
+	// Object Textures
 	Texture* m_pPowerUpTexture;
+	Texture* m_pPowerUpBulletTexture;
+	Texture* m_pPowerUpShipTexture;
+
 	std::vector<Projectile*> m_projectiles;
 
 
