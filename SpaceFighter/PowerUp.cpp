@@ -63,4 +63,41 @@ void PowerUp::SpeedBooster() {
 
 }
 
-void PowerUp::RapidFire(PlayerShip* playership) {}
+void PowerUp::DoubleRapidFire() 
+{
+	
+}
+void PowerUp::RapidFire()
+{
+	/*getPowerUpType();
+	if(PowerUpType == 2)
+	{
+		GetRapidFireType();
+		if(RapidFireType == 1) //rand non-stack
+		{
+			std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(min, max);
+		}
+		elseif(RapidFireType == 2) //double non-stack
+		{
+			m_RapidFireRate = 2;
+		}
+		else if(RapidFireType == 1) //triple non-stack
+		{
+			m_RapidFireRate = 3;
+		}
+		
+	}
+	*/
+}
+/*
+GetRapidFireType()
+{
+	std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(min, max);
+    
+    RapidFireType = dis(gen);
+}
+*/

@@ -6,11 +6,12 @@
 
 class PowerUp : public GameObject
 {
-	//protected:
+
 public:
 	enum PowerUpType {
-		RapidFire = 1,
-		SpeedBoost,
+		SpeedBoost = 1,
+		RapidFire = 2,
+		
 		//Shield,
 		//ExtraDamage
 	};
@@ -44,6 +45,7 @@ public:
 
 	virtual std::string ToString() const { return "PowerUp"; }
 
+	virtual void DoubleRapidFire();
 	virtual void RapidFire();
 
 private:
@@ -61,7 +63,9 @@ private:
 
 	float min;
 	float max;
+	int RapidFireType;
 	float RandRapidFireRate;
+	float m_RapidFireRate;
 
 };
 
