@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Level.h"
+#include "BioEnemyShip.h"
 
 class Level01 :	public Level
 {
@@ -54,7 +55,8 @@ public:
 		Vector2 position;
 
 		for (int i = 0; i < COUNT; i++)
-		{
+		{ 
+
 			delay += delays[i];
 			position.Set(xPositions[i] * Game::GetScreenWidth(), -pTexture->GetCenter().Y);
 
