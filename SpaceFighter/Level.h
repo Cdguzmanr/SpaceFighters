@@ -97,10 +97,14 @@ private:
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*>::iterator m_gameObjectIt;
 
-	PlayerShip* m_pPlayerShip;
+	PlayerShip* m_pPlayerShip;	
+	
 	Texture* m_pPowerUpTexture;
 	std::vector<Projectile*> m_projectiles;
 
+	//background
+	Texture* m_pTexture;
+	Vector2 m_texturePosition;
 
 	void CheckCollisions(std::vector<GameObject*>& sector);
 

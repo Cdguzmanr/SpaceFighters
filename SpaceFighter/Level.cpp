@@ -1,4 +1,3 @@
-
 #include "Level.h"
 #include "EnemyShip.h"
 #include "Blaster.h"
@@ -105,8 +104,16 @@ Level::~Level()
 
 void Level::LoadContent(ResourceManager *pResourceManager)
 {
+
 	m_pPlayerShip->LoadContent(pResourceManager);
-	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png");
+	//LOAD BACKGROUND
+	m_pTexture = pResourceManager->Load<Texture>("Textures\\backspace.png"); // BACKGROUND TEXTURE
+	m_texturePosition = Game::GetScreenCenter();
+
+
+	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png"); // POWERUP TEXTURE
+
+
 }
 
 
@@ -200,13 +207,15 @@ void Level::CheckCollisions(std::vector<GameObject *> &gameObjects)
 					m_pCollisionManager->CheckCollision(pFirst, pSecond);
 				}
 			}
-		
+		}
 	}
 }
 
 void Level::Draw(SpriteBatch *pSpriteBatch)
 {
 	pSpriteBatch->Begin();
+
+	pSpriteBatch->Draw(m_pTexture, m_texturePosition, Color::White, m_pTexture->GetCenter());
 
 	m_gameObjectIt = m_gameObjects.begin();
 	for (; m_gameObjectIt != m_gameObjects.end(); m_gameObjectIt++)

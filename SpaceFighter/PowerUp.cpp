@@ -47,3 +47,27 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 	SetPosition(position);
 	m_delaySeconds = delaySeconds;
 }
+
+// generates a random PowerUpType enum value and sets it as the current type for the power-up.
+//not sure whether to use SetType or Return 
+void PowerUp::GetPowerUpRandom()
+{
+	int random = rand() % 4 + 1; 
+	switch (random)
+	{
+	case 1:
+		SetType(PowerUpType::RapidFire);
+		break;
+	case 2:
+		SetType(PowerUpType::SpeedBoost);
+		break;
+	case 3:
+		SetType(PowerUpType::Shield);
+		break;
+	case 4:
+		SetType(PowerUpType::ExtraDamage);
+		break;
+	default:
+		break;
+	}
+}

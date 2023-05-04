@@ -1,24 +1,10 @@
-
-
 #include "Level01.h"
 #include "BioEnemyShip.h"
 
 
-void Level01::SetBackgroundTexture(Texture* pTexture)
-{
-	m_pBackgroundTexture = pTexture;
-
-}
-
 void Level01::LoadContent(ResourceManager *pResourceManager)
 {
 
-	// Load background image - First method
-	//Texture* pBackgroundTexture = pResourceManager->Load<Texture>("Textures\\space-galaxy-background.jpg");
-
-	// Load background texture
-	Texture* pBackgroundTexture = pResourceManager->Load<Texture>("Textures\\background-space.png"); // doesn't work yet
-	SetBackgroundTexture(pBackgroundTexture);
 
 	// Setup enemy ships
 	Texture *pTexture = pResourceManager->Load<Texture>("Textures\\BioEnemyShip.png");

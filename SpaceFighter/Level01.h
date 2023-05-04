@@ -22,17 +22,13 @@ public:
 	virtual void UnloadContent() { }
 
 		//this is for: m_pBackgroundTexture = pTexture;
-	Texture* m_pBackgroundTexture;
-	void SetBackgroundTexture(Texture* pTexture);
+	//Texture* m_pBackgroundTexture;
+	//void SetBackgroundTexture(Texture* pTexture);
 
 
 
 private :
 
-	//store the background texture
-	//Texture* m_pBackgroundTexture;
-
-	//ResourceManager* m_pResourceManager = nullptr;
 
 };
 

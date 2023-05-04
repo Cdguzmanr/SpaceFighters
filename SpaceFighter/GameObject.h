@@ -24,7 +24,7 @@ public:
 
 	virtual void Update(const GameTime *pGameTime);
 
-	virtual void Draw(SpriteBatch *pSpriteBatch) = 0;
+	virtual void Draw (SpriteBatch *pSpriteBatch) = 0;
 
 	virtual bool IsActive() const { return m_isActive; }
 

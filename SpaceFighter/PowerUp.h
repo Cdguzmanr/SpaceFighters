@@ -35,6 +35,8 @@ public:
 	virtual void SetType(const PowerUpType type) { m_type = type; }
 
 	virtual std::string ToString() const { return "PowerUp"; }
+
+	virtual void GetPowerUpRandom();
 	
 private:
 	double m_delaySeconds;
