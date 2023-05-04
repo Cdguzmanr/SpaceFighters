@@ -50,16 +50,42 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 	m_delaySeconds = delaySeconds;
 }
 
-void PowerUp::RandRapidFiring(PlayerShip* playership) {
-	 std::random_device rd;
-	 std::mt19937 gen(rd());
-	 std::uniform_int_distribution<>dis(min, max);
-	 RandRapidFireRate = static_cast<float> (dis(gen)) / 10000.0f;
-	 
-	 //SetCooldownBoost(2);	
+//void PowerUp::RandFireRate(PlayerShip* playership) {
+//	 std::random_device rd;
+//	 std::mt19937 gen(rd());
+//	 std::uniform_int_distribution<>dis(min, max);
+//	 RandRapidFireRate = static_cast<float> (dis(gen)) / 10000.0f;
+//	 
+//	 //SetCooldownBoost(2);	
+//}
+
+void PowerUp::DoubleFireRate() {
+	boostMultiplier = 2;
+}
+
+void PowerUp::TripleFireRate() {
+	boostMultiplier = 3;
+}
+
+void PowerUp::StackingFireRate() {
+	boostMultiplier = 2;
+	if (PowerUp::boostMultiplier < 16)
+	{
+		boostMultiplier *= 2;
+	}
+	else if (boostMultiplier >= 16)
+	{
+		boostMultiplier = 16;
+	}
 }
 
 void PowerUp::SpeedBooster() {
 
 }
 
+/*
+* void PowerUp::FireRatePowerUp{
+*	if(activePowerUp == false){
+*		if()
+* }
+*/
