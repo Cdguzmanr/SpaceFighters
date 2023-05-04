@@ -2,6 +2,7 @@
 #pragma once
 
 #include "Weapon.h"
+#include "PowerUp.h"
 
 
 class Blaster : public Weapon
@@ -13,7 +14,7 @@ public:
 	{
 		// Assignment 6.B Wepon cooldown -- Shoot Faster 
 		m_cooldown = 0; 
-		m_cooldownSeconds = 0.35 / m_cooldownBoost; // old: 0.35
+		m_cooldownSeconds = 0.35; // old: 0.35
 	}
 
 	virtual ~Blaster() { }
@@ -29,7 +30,7 @@ public:
 
 	virtual float GetCooldownSeconds() { return m_cooldownSeconds; }
 
-	virtual void SetCooldownBoost(const float boost) { m_cooldownBoost = boost; }
+	//virtual void SetCooldownBoost(const float boost) { m_cooldownBoost = boost; }
 
 	virtual void Fire(TriggerType triggerType)
 	{
@@ -51,10 +52,16 @@ public:
 		}
 	}
 
+	PowerUp::PowerUp();
+
+	virtual PowerUp::PowerUpType GetType(PowerUp::PowerUpType* m_pType) const { return &PowerUp::m_pType; }
+
+	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::m_pType = type; }
+
 private:
 
 	float m_cooldown;
 	float m_cooldownSeconds;
-	float m_cooldownBoost;
+	
 
 };

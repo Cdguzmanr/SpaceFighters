@@ -46,6 +46,7 @@ public:
 	virtual AudioSample* GetFireSound() { return m_pFireSound; }
 	
 	
+	
 protected:
 
 	virtual TriggerType GetTriggerType() const { return m_triggerType; }

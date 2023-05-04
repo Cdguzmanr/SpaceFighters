@@ -132,6 +132,7 @@ Vector2 PlayerShip::GetHalfDimensions() const
 
 void PlayerShip::GetPowerUpType(PowerUp::PowerUpType* m_pType)
 {
+	if(&m_pType == )
 	//grab powerup type on 0th weapon
 	//call setboostspeed
 }

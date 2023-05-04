@@ -6,7 +6,7 @@
 
 class PowerUp : public GameObject
 {
-
+	
 public:
 	enum PowerUpType {
 		none = 0,
@@ -16,11 +16,11 @@ public:
 		//Shield,
 		//ExtraDamage
 	};
-PowerUpType* m_pType;
+
 	//todo get the methods built
 
 	PowerUp();
-
+	PowerUpType* m_pType; //not sure if this should be public or how to fix this
 
 	//virtual void SetCooldownBoost(const float boost);
 	//virtual void RandRapidFiring(PlayerShip* playership);
@@ -69,6 +69,7 @@ private:
 	int RapidFireType;
 	//float RandRapidFireRate;
 	float m_RapidFireRate;
+	float* m_pRapidFireRate;
 
 };
 
