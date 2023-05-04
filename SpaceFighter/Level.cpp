@@ -187,7 +187,7 @@ void Level::UpdateSectorPosition(GameObject *pGameObject)
 
 PowerUp* Level::GetPowerUp()
 {
-	m_powerUpIt = m_PowerUps.begin();
+	m_powerUpIt = m_PowerUps.begin();	
 	for (; m_powerUpIt != m_PowerUps.end(); m_powerUpIt++)
 	{
 		PowerUp* pPowerUp = *m_powerUpIt;
