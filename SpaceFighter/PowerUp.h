@@ -11,8 +11,8 @@ public:
 	enum PowerUpType {
 		RapidFire = 1,
 		SpeedBoost,
-		Shield,
-		ExtraDamage
+		//Shield,
+		//ExtraDamage
 	};
 
 	//todo get the methods built
@@ -21,7 +21,7 @@ public:
 
 
 	//virtual void SetCooldownBoost(const float boost);
-	virtual void RandRapidFiring(PlayerShip* playership);
+	//virtual void RandRapidFiring(PlayerShip* playership);
 	virtual void SpeedBooster();
 
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
@@ -43,6 +43,8 @@ public:
 	virtual void SetType(const PowerUpType type) { m_type = type; }
 
 	virtual std::string ToString() const { return "PowerUp"; }
+
+	virtual void RapidFire();
 
 private:
 	double m_delaySeconds;
