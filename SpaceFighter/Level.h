@@ -35,9 +35,10 @@ public:
 
 	virtual Texture* GetPowerUpTexture() { return m_pPowerUpTexture; }
 
+	virtual Texture* GetPowerUpShipTexture() { return m_pPowerUpShipTexture; }
+
 	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
 
-	virtual Texture* GetPowerUpShipTexture() { return m_pPowerUpShipTexture; }
 
 	template <typename T>
 	T* GetClosestObject(const Vector2 position, const float range)
