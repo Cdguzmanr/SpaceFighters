@@ -33,7 +33,7 @@ public:
 
 	virtual void SetGameplayScreen(GameplayScreen* pGameplayScreen) { m_pGameplayScreen = pGameplayScreen; }
 
-	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }
+	virtual Texture* GetPowerUpTexture() { return m_pPowerUpTexture; }
 
 	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
 
@@ -100,7 +100,7 @@ private:
 
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*>::iterator m_gameObjectIt;
-	
+
 	//Background
 	Texture* m_pTexture;
 
