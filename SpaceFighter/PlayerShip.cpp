@@ -1,6 +1,6 @@
 
 #include "PlayerShip.h"
-#include "PowerUp.h"
+
 
 
 void PlayerShip::LoadContent(ResourceManager* pResourceManager)
@@ -130,12 +130,8 @@ Vector2 PlayerShip::GetHalfDimensions() const
 
 
 
-void PlayerShip::RecievePowerUp(PowerUp* pPowerUpType)
+void PlayerShip::GetPowerUpType(PowerUp::PowerUpType* m_pType)
 {
-	//if(&pPowerUpType == 1){
-	
-
-	// }
 	//grab powerup type on 0th weapon
 	//call setboostspeed
 }

@@ -5,6 +5,7 @@
 #include "PowerUp.h"
 
 
+
 class PlayerShip : public Ship
 {
 
@@ -33,7 +34,7 @@ public:
 
 	virtual void ConfineToScreen(const bool isConfined = true) { m_isConfinedToScreen = isConfined; }
 
-	virtual void RecievePowerUp(PowerUp* pPowerUpType);
+	virtual void GetPowerUpType(PowerUp::PowerUpType* m_pType);
 
 
 

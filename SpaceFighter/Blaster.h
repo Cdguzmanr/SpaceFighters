@@ -51,7 +51,6 @@ public:
 		}
 	}
 
-
 private:
 
 	float m_cooldown;

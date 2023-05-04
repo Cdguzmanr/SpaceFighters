@@ -75,7 +75,7 @@ void PowerUp::RapidFireMethod()
 			std::mt19937 gen(rd());
 			std::uniform_int_distribution<> dis(min, max);
 		}
-		elseif(RapidFireType == 2) //double non-stack
+		else if(RapidFireType == 2) //double non-stack
 		{
 			m_RapidFireRate = 2;
 		}
@@ -88,11 +88,11 @@ void PowerUp::RapidFireMethod()
 	*/
 }
 /*
-GetRapidFireType()
+void PowerUp::GetRapidFireType()
 {
 	std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(min, max);
+    std::uniform_int_distribution<> dis(min, max); //todo:adjust min and max
     
     RapidFireType = dis(gen);
 }

@@ -16,7 +16,7 @@ public:
 		//Shield,
 		//ExtraDamage
 	};
-
+PowerUpType* m_pType;
 	//todo get the methods built
 
 	PowerUp();
@@ -59,14 +59,15 @@ private:
 
 	float m_duration;
 
-	PowerUpType m_type;
+	PowerUpType m_type = RapidFire;
+	
 
 	Texture* m_pTexture = nullptr;
 
 	float min;
 	float max;
 	int RapidFireType;
-	float RandRapidFireRate;
+	//float RandRapidFireRate;
 	float m_RapidFireRate;
 
 };
