@@ -63,11 +63,7 @@ void PowerUp::SpeedBooster() {
 
 }
 
-void PowerUp::DoubleRapidFire() 
-{
-	
-}
-void PowerUp::RapidFire()
+void PowerUp::RapidFireMethod()
 {
 	/*getPowerUpType();
 	if(PowerUpType == 2)

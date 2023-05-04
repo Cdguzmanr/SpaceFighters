@@ -45,8 +45,8 @@ public:
 
 	virtual std::string ToString() const { return "PowerUp"; }
 
-	virtual void DoubleRapidFire();
-	virtual void RapidFire();
+
+	virtual void RapidFireMethod();
 
 private:
 	double m_delaySeconds;
