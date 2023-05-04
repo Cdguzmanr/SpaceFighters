@@ -15,7 +15,8 @@ public:
 		//Shield,
 		//ExtraDamage
 	};
-
+	int boostMultiplier;
+	bool activePowerUp;
 	//todo get the methods built
 
 	PowerUp();
