@@ -34,7 +34,12 @@ public:
 
 	virtual void SetGameplayScreen(GameplayScreen* pGameplayScreen) { m_pGameplayScreen = pGameplayScreen; }
 
-	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }	
+	virtual Texture* GetPowerUpTexture() { return m_pPowerUpTexture; }
+
+	virtual Texture* GetPowerUpShipTexture() { return m_pPowerUpShipTexture; }
+
+	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
+
 
 	virtual PowerUp* GetPowerUp();
 
@@ -102,8 +107,19 @@ private:
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*>::iterator m_gameObjectIt;
 
+	//Background
+	Texture* m_pTexture;
+
+	Vector2 m_texturePosition;
+
+
 	PlayerShip* m_pPlayerShip;
+
+	// Object Textures
 	Texture* m_pPowerUpTexture;
+	Texture* m_pPowerUpBulletTexture;
+	Texture* m_pPowerUpShipTexture;
+
 	std::vector<Projectile*> m_projectiles;
 	std::vector<PowerUp*> m_PowerUps;
 	std::vector<PowerUp*>::iterator m_powerUpIt;

@@ -12,6 +12,10 @@ public:
 	PlayerShip() { }
 	virtual ~PlayerShip() { }
 
+	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
+
+	virtual void SetWeaponTexture(Texture* pTexture) { m_pTexture = pTexture; }
+
 	virtual void LoadContent(ResourceManager *pResourceManager);
 
 	virtual void Update(const GameTime *pGameTime);
@@ -33,6 +37,7 @@ public:
 	virtual void ConfineToScreen(const bool isConfined = true) { m_isConfinedToScreen = isConfined; }
 
 
+
 protected:
 
 	virtual void SetResponsiveness(const float responsiveness);
@@ -52,5 +57,7 @@ private:
 	bool m_isConfinedToScreen = false;
 
 	Texture *m_pTexture = nullptr;
+
+	Texture* m_pBulletTexture = nullptr;
 
 };
