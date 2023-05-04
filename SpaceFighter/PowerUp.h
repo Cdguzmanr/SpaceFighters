@@ -2,21 +2,21 @@
 
 #include "GameObject.h"
 #include "BioEnemyShip.h"
-#include "PlayerShip.h"
+
 
 class PowerUp : public GameObject
 {
 
 public:
 	enum PowerUpType {
+		none = 0,
 		SpeedBoost = 1,
 		RapidFire = 2,
 		
 		//Shield,
 		//ExtraDamage
 	};
-	int boostMultiplier;
-	bool activePowerUp;
+
 	//todo get the methods built
 
 	PowerUp();
@@ -48,6 +48,7 @@ public:
 
 
 	virtual void RapidFireMethod();
+
 
 private:
 	double m_delaySeconds;

@@ -128,7 +128,21 @@ Vector2 PlayerShip::GetHalfDimensions() const
 	return m_pTexture->GetCenter();
 }
 
+
+
+void PlayerShip::RecievePowerUp(PowerUp* pPowerUpType)
+{
+	//if(&pPowerUpType == 1){
+	
+
+	// }
+	//grab powerup type on 0th weapon
+	//call setboostspeed
+}
+
 void PlayerShip::SetResponsiveness(const float responsiveness)
 {
 	m_responsiveness = Math::Clamp(0, 1, responsiveness);
 }
+
+

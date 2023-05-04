@@ -5,6 +5,7 @@
 #include "Projectile.h"
 #include "TriggerType.h"
 
+
 using namespace KatanaEngine;
 
 class Weapon
@@ -43,7 +44,8 @@ public:
 	virtual void SetFireSound(AudioSample* pSound) { m_pFireSound = pSound; }
 
 	virtual AudioSample* GetFireSound() { return m_pFireSound; }
-
+	
+	
 protected:
 
 	virtual TriggerType GetTriggerType() const { return m_triggerType; }

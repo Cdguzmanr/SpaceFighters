@@ -50,7 +50,7 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 	m_delaySeconds = delaySeconds;
 }
 
-//void PowerUp::RandFireRate(PlayerShip* playership) {
+//void PowerUp::RandRapidFiring(PlayerShip* playership) {
 //	 std::random_device rd;
 //	 std::mt19937 gen(rd());
 //	 std::uniform_int_distribution<>dis(min, max);
@@ -59,47 +59,27 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 //	 //SetCooldownBoost(2);	
 //}
 
-//void PowerUp::DoubleFireRate() {
-//	boostMultiplier = 2;
-//}
-//
-//void PowerUp::TripleFireRate() {
-//	boostMultiplier = 3;
-//}
-//
-//void PowerUp::StackingFireRate() {
-//	boostMultiplier = 2;
-//	if (PowerUp::boostMultiplier < 16)
-//	{
-//		boostMultiplier *= 2;
-//	}
-//	else if (boostMultiplier >= 16)
-//	{
-//		boostMultiplier = 16;
-//	}
-
-void PowerUp::SpeedBooster() 
-{
+void PowerUp::SpeedBooster() {
 
 }
 
 void PowerUp::RapidFireMethod()
 {
-	/*getPowerUpType();
+	/*
 	if(PowerUpType == 2)
 	{
 		GetRapidFireType();
 		if(RapidFireType == 1) //rand non-stack
 		{
 			std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(min, max);
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<> dis(min, max);
 		}
 		elseif(RapidFireType == 2) //double non-stack
 		{
 			m_RapidFireRate = 2;
 		}
-		else if(RapidFireType == 1) //triple non-stack
+		else if(RapidFireType == 3) //triple non-stack
 		{
 			m_RapidFireRate = 3;
 		}

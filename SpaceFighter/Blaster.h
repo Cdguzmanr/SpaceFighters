@@ -3,6 +3,7 @@
 
 #include "Weapon.h"
 
+
 class Blaster : public Weapon
 {
 

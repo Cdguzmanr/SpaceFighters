@@ -2,6 +2,7 @@
 #pragma once
 
 #include "Ship.h"
+#include "PowerUp.h"
 
 
 class PlayerShip : public Ship
@@ -32,10 +33,8 @@ public:
 
 	virtual void ConfineToScreen(const bool isConfined = true) { m_isConfinedToScreen = isConfined; }
 
-	virtual void RecievePowerUp() {
-		//grab powerup type on 0th weapon
-		//call setboostspeed
-	}
+	virtual void RecievePowerUp(PowerUp* pPowerUpType);
+
 
 
 protected:
