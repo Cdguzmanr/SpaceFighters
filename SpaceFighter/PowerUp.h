@@ -9,12 +9,9 @@ class PowerUp : public GameObject
 
 public:
 	enum PowerUpType {
-		RapidFire = 1,
-		SpeedBoost,
-		stackingFireRate,
-		doubleFireRate,
-		tripleFireRate,
-
+		SpeedBoost = 1,
+		RapidFire = 2,
+		
 		//Shield,
 		//ExtraDamage
 	};
@@ -28,9 +25,6 @@ public:
 	//virtual void SetCooldownBoost(const float boost);
 	//virtual void RandRapidFiring(PlayerShip* playership);
 	virtual void SpeedBooster();
-	virtual void PowerUp::StackingFireRate();
-	virtual void PowerUp::DoubleFireRate();
-	virtual void PowerUp::TripleFireRate();
 
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
@@ -52,6 +46,9 @@ public:
 
 	virtual std::string ToString() const { return "PowerUp"; }
 
+
+	virtual void RapidFireMethod();
+
 private:
 	double m_delaySeconds;
 
@@ -67,8 +64,9 @@ private:
 
 	float min;
 	float max;
+	int RapidFireType;
 	float RandRapidFireRate;
-	int boostMultiplier;
+	float m_RapidFireRate;
 
 };
 
