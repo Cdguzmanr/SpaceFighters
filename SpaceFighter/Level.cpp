@@ -16,10 +16,9 @@ void PlayerShootsEnemy(GameObject *pObject1, GameObject *pObject2)
 	pEnemyShip->Hit(pPlayerProjectile->GetDamage());
 	if (!pEnemyShip->IsActive())
 	{
-		PowerUp* pPowerUp = new PowerUp();
-		pPowerUp->SetTexture(pEnemyShip->GetCurrentLevel()->GetPowerUpTexture());
+		PowerUp* pPowerUp = pEnemyShip->GetCurrentLevel()->GetPowerUp();
 		pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
-		pEnemyShip->GetCurrentLevel()->AddGameObject(pPowerUp);
+		
 	}
 	pPlayerProjectile->Deactivate();
 }
@@ -73,6 +72,7 @@ Level::Level()
 		AddGameObject(pProjectile);
 	}
 	
+	
 	m_pPlayerShip->Activate();
 	AddGameObject(m_pPlayerShip);
 
@@ -107,6 +107,14 @@ void Level::LoadContent(ResourceManager *pResourceManager)
 {
 	m_pPlayerShip->LoadContent(pResourceManager);
 	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png");
+	for (int i = 0; i < 4; i++)
+	{
+		PowerUp* pPowerUp = new PowerUp();
+		pPowerUp->SetTexture(GetPowerUpTexture());
+
+		m_PowerUps.push_back(pPowerUp);
+		AddGameObject(pPowerUp);
+	}
 }
 
 
@@ -175,6 +183,18 @@ void Level::UpdateSectorPosition(GameObject *pGameObject)
 			m_pSectors[index].push_back(pGameObject);
 		}
 	}
+}
+
+PowerUp* Level::GetPowerUp()
+{
+	m_powerUpIt = m_PowerUps.begin();
+	for (; m_powerUpIt != m_PowerUps.end(); m_powerUpIt++)
+	{
+		PowerUp* pPowerUp = *m_powerUpIt;
+		if (!pPowerUp->IsActive()) return pPowerUp;
+	}
+
+	return nullptr;
 }
 
 

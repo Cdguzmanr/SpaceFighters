@@ -4,6 +4,7 @@
 #include "KatanaEngine.h"
 #include "PlayerShip.h"
 #include "CollisionManager.h"
+#include "PowerUp.h"
 
 using namespace KatanaEngine;
 
@@ -33,7 +34,9 @@ public:
 
 	virtual void SetGameplayScreen(GameplayScreen* pGameplayScreen) { m_pGameplayScreen = pGameplayScreen; }
 
-	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }
+	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }	
+
+	virtual PowerUp* GetPowerUp();
 
 	template <typename T>
 	T* GetClosestObject(const Vector2 position, const float range)
@@ -79,6 +82,8 @@ protected:
 
 	virtual AudioSample* GetBackgroundAudio() { return m_pAudio; }
 
+	
+
 private:
 
 	CollisionManager* m_pCollisionManager = nullptr;
@@ -100,6 +105,8 @@ private:
 	PlayerShip* m_pPlayerShip;
 	Texture* m_pPowerUpTexture;
 	std::vector<Projectile*> m_projectiles;
+	std::vector<PowerUp*> m_PowerUps;
+	std::vector<PowerUp*>::iterator m_powerUpIt;
 
 
 	void CheckCollisions(std::vector<GameObject*>& sector);
