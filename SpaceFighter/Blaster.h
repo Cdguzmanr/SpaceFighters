@@ -52,11 +52,11 @@ public:
 		}
 	}
 
-	PowerUp::PowerUp();
+	/*PowerUp::PowerUp();
 
 	virtual PowerUp::PowerUpType GetType(PowerUp::PowerUpType* m_pType) const { return &PowerUp::m_pType; }
 
-	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::m_pType = type; }
+	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::m_pType = type; }*/
 
 private:
 

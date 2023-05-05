@@ -48,7 +48,8 @@ public:
 
 
 	virtual void RapidFireMethod();
-
+	virtual void GetRapidFireType();
+	virtual void SetRandFireRate();
 
 private:
 	double m_delaySeconds;
@@ -64,12 +65,14 @@ private:
 
 	Texture* m_pTexture = nullptr;
 
-	float min;
-	float max;
-	int RapidFireType;
-	//float RandRapidFireRate;
-	float m_RapidFireRate;
-	float* m_pRapidFireRate;
+	
 
+	
+
+	int RapidFireType;
+	float m_RapidFireRate = 1;
+	float* m_pRapidFireRate;
+	bool isStackable;
+	float randFireRate;
 };
 
