@@ -66,12 +66,12 @@ void PowerUp::SpeedBooster() {
 
 void PowerUp::RapidFireMethod()
 {
-	if (m_type == RapidFire)
-	{
-		//GetRapidFireType();
-		m_RapidFireRate = 2;
+	//GetRapidFireType();
+	m_RapidFireRate = 2;
 
-		if (isStackable == true)
+	if (isActive != false)
+	{
+		if (isStackable == false)
 		{
 			if (m_RapidFireRate <= 8)
 			{
@@ -88,8 +88,6 @@ void PowerUp::RapidFireMethod()
 					m_RapidFireRate = 3;
 				}
 			}
-			
-			
 		}
 		else
 		{
@@ -105,8 +103,12 @@ void PowerUp::RapidFireMethod()
 			{
 				SetRandFireRate();
 			}
-			//void ResetPowerUpTimer();
+			//void Increase PowerUpTimer();
 		}
+	}
+	else 
+	{
+		m_RapidFireRate = 1;
 	}
 }
 		
@@ -143,3 +145,21 @@ void PowerUp::SetRandFireRate() {
 	m_RapidFireRate = randFireRate;
 }
 //void ResetPowerUpTimer(){}
+
+void PowerUp::ActivatePowerUp()
+{
+	if (m_type == SpeedBoost) {}
+	else if (m_type == RapidFire) {PowerUp::RapidFireMethod();}
+	else if (m_type == Shield) {}
+	else if (m_type == ExtraDamage) {}
+	else
+	{
+		PowerUp::Deactivate();
+	}
+}
+
+void PowerUp::Deactivate()
+{
+	m_type = none;
+	isActive = false;
+}

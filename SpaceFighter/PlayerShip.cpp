@@ -130,11 +130,19 @@ Vector2 PlayerShip::GetHalfDimensions() const
 
 
 
-void PlayerShip::GetPowerUpType(PowerUp::PowerUpType* m_pType)
+
+
+void PlayerShip::ActivatePowerUp()
 {
-	//if(&m_pType == )
-	//grab powerup type on 0th weapon
-	//call setboostspeed
+
+	/*if (type == SpeedBoost) {}
+	else if (type == RapidFire) { PowerUp::RapidFireMethod(); }
+	else if (type == Shield) {}
+	else if (type == ExtraDamage) {}
+	else
+	{
+		PowerUp::Deactivate();
+	}*/
 }
 
 void PlayerShip::SetResponsiveness(const float responsiveness)

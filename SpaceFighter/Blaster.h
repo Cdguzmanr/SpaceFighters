@@ -3,6 +3,7 @@
 
 #include "Weapon.h"
 #include "PowerUp.h"
+#include "PlayerShip.h"
 
 
 class Blaster : public Weapon
@@ -30,7 +31,12 @@ public:
 
 	virtual float GetCooldownSeconds() { return m_cooldownSeconds; }
 
-	//virtual void SetCooldownBoost(const float boost) { m_cooldownBoost = boost; }
+	virtual void SetCooldownBoost(const float boost)
+	{ 
+		float m_cooldownBoost;
+		m_cooldownBoost = boost;	
+	}
+	
 
 	virtual void Fire(TriggerType triggerType)
 	{
@@ -51,17 +57,20 @@ public:
 			}
 		}
 	}
+	//void PowerUp::GetType(PlayerShip::PlayerShip playership)
+
 
 	/*PowerUp::PowerUp();
+	* 
 
 	virtual PowerUp::PowerUpType GetType(PowerUp::PowerUpType* m_pType) const { return &PowerUp::m_pType; }
 
 	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::m_pType = type; }*/
 
 private:
-
+	
 	float m_cooldown;
 	float m_cooldownSeconds;
-	
+
 
 };

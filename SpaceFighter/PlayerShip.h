@@ -34,9 +34,17 @@ public:
 
 	virtual void ConfineToScreen(const bool isConfined = true) { m_isConfinedToScreen = isConfined; }
 
-	virtual void GetPowerUpType(PowerUp::PowerUpType* m_pType);
+	virtual PowerUp::PowerUpType GetPowerUpType(PowerUp::PowerUpType &m_pType) 
+	{
+		PowerUp::PowerUpType type = *&m_pType;
+	}
 
-
+	virtual void SetBoost(float &m_pRapidFireRate) 
+	{
+		float boost;
+		boost = *&m_pRapidFireRate;
+	}
+	virtual void ActivatePowerUp();
 
 protected:
 
