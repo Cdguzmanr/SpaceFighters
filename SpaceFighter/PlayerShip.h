@@ -37,6 +37,7 @@ public:
 	virtual PowerUp::PowerUpType GetPowerUpType(PowerUp::PowerUpType &m_pType) 
 	{
 		PowerUp::PowerUpType type = *&m_pType;
+		return type;
 	}
 
 	virtual void SetBoost(float &m_pRapidFireRate) 

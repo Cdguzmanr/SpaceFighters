@@ -135,14 +135,7 @@ Vector2 PlayerShip::GetHalfDimensions() const
 void PlayerShip::ActivatePowerUp()
 {
 
-	/*if (type == SpeedBoost) {}
-	else if (type == RapidFire) { PowerUp::RapidFireMethod(); }
-	else if (type == Shield) {}
-	else if (type == ExtraDamage) {}
-	else
-	{
-		PowerUp::Deactivate();
-	}*/
+
 }
 
 void PlayerShip::SetResponsiveness(const float responsiveness)
