@@ -13,15 +13,15 @@ public:
 		SpeedBoost = 1,
 		RapidFire = 2,
 		
-		//Shield,
-		//ExtraDamage
+		Shield,
+		ExtraDamage
 	};
 
 	//todo get the methods built
 
 	PowerUp();
-	PowerUpType* m_pType; //not sure if this should be public or how to fix this
-
+	float* m_pRapidFireRate = &m_RapidFireRate;
+	PowerUpType* m_pType = &m_type;
 	//virtual void SetCooldownBoost(const float boost);
 	//virtual void RandRapidFiring(PlayerShip* playership);
 	virtual void SpeedBooster();
@@ -48,7 +48,12 @@ public:
 
 
 	virtual void RapidFireMethod();
+	virtual void GetRapidFireType();
+	virtual void SetRandFireRate();
 
+
+	virtual void ActivatePowerUp();
+	virtual void Deactivate();
 
 private:
 	double m_delaySeconds;
@@ -64,12 +69,13 @@ private:
 
 	Texture* m_pTexture = nullptr;
 
-	float min;
-	float max;
-	int RapidFireType;
-	//float RandRapidFireRate;
-	float m_RapidFireRate;
-	float* m_pRapidFireRate;
+	
 
+	bool isActive;
+
+	int RapidFireType;
+	float m_RapidFireRate = 1.0;
+	bool isStackable;
+	float randFireRate;
 };
 
