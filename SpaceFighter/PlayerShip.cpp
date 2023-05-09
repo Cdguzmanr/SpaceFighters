@@ -130,14 +130,6 @@ Vector2 PlayerShip::GetHalfDimensions() const
 
 
 
-
-
-void PlayerShip::ActivatePowerUp()
-{
-
-
-}
-
 void PlayerShip::SetResponsiveness(const float responsiveness)
 {
 	m_responsiveness = Math::Clamp(0, 1, responsiveness);

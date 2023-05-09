@@ -69,6 +69,8 @@ void PowerUp::RapidFireMethod()
 	//GetRapidFireType();
 	m_RapidFireRate = 2;
 
+	Blaster::SetCooldownBoost(m_RapidFireRate);
+
 	//if (isActive != false)
 	//{
 	//	if (isStackable == false)
@@ -146,20 +148,19 @@ void PowerUp::SetRandFireRate() {
 }
 //void ResetPowerUpTimer(){}
 
+
 void PowerUp::ActivatePowerUp()
 {
 	if (m_type == SpeedBoost) {}
 	else if (m_type == RapidFire) {PowerUp::RapidFireMethod();}
 	else if (m_type == Shield) {}
 	else if (m_type == ExtraDamage) {}
-	else
+	/*else
 	{
-		PowerUp::Deactivate();
+		m_type = none;
 	}
+	
+	when timer runs out set poweruptye to none*/
 }
 
-void PowerUp::Deactivate()
-{
-	m_type = none;
-	isActive = false;
-}
+

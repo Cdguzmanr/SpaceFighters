@@ -20,10 +20,10 @@ public:
 	//todo get the methods built
 
 	PowerUp();
-	float* m_pRapidFireRate = &m_RapidFireRate;
-	PowerUpType* m_pType = &m_type;
-	//virtual void SetCooldownBoost(const float boost);
-	//virtual void RandRapidFiring(PlayerShip* playership);
+
+	// virtual void SetCooldownBoost(const float boost);
+
+
 	virtual void SpeedBooster();
 
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
@@ -53,7 +53,7 @@ public:
 
 
 	virtual void ActivatePowerUp();
-	virtual void Deactivate();
+
 
 private:
 	double m_delaySeconds;
@@ -64,7 +64,7 @@ private:
 
 	float m_duration;
 
-	PowerUpType m_type = RapidFire;
+	PowerUpType m_type;
 	
 
 	Texture* m_pTexture = nullptr;
