@@ -5,7 +5,6 @@
 #include "PlayerShip.h"
 #include "CollisionManager.h"
 #include "PowerUp.h"
-//powerup needs to know about level then level knows about playership and can be used to get the blaster instance to affect it
 
 using namespace KatanaEngine;
 
@@ -41,6 +40,7 @@ public:
 
 	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
 
+	
 
 	virtual PowerUp* GetPowerUp();
 

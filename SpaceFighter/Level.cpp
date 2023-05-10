@@ -5,7 +5,7 @@
 #include "PowerUp.h"
 
 
-
+class PlayerShip;
 // Collision Callback Functions
 void PlayerShootsEnemy(GameObject *pObject1, GameObject *pObject2)
 {
@@ -64,6 +64,7 @@ void PlayerCollidesWithPowerUp(GameObject* pObject1, GameObject* pObject2)
 
 		// 3- Make PowerUp effect
 		pPowerUp->ActivatePowerUp();
+		pPlayerShip->GetWeapon(0)->SetCooldownBoost(pPowerUp->GetRapidFireRate());
 	}
 
 	pPowerUp->Deactivate();

@@ -44,6 +44,7 @@ public:
 	virtual void SetFireSound(AudioSample* pSound) { m_pFireSound = pSound; }
 
 	virtual AudioSample* GetFireSound() { return m_pFireSound; }
+
 	
 	
 	
