@@ -69,47 +69,49 @@ void PowerUp::RapidFireMethod()
 	//GetRapidFireType();
 	m_RapidFireRate = 2;
 
-	if (isActive != false)
-	{
-		if (isStackable == false)
-		{
-			if (m_RapidFireRate <= 8)
-			{
-				if (RapidFireType == 1 && isStackable == false) //rand non-stack
-				{
-					SetRandFireRate();
-				}
-				else if (RapidFireType == 2 && isStackable == false) //double non-stack
-				{
-					m_RapidFireRate = 2;
-				}
-				else if (RapidFireType == 3 && isStackable == false) //triple non-stack
-				{
-					m_RapidFireRate = 3;
-				}
-			}
-		}
-		else
-		{
-			if (RapidFireType == 4 && isStackable == true) //triple non-stack
-			{
-				m_RapidFireRate = 2;
-			}
-			else if (RapidFireType == 5 && isStackable == true) //triple non-stack
-			{
-				m_RapidFireRate = 3;
-			}
-			else if (RapidFireType == 6 && isStackable == true) //triple non-stack
-			{
-				SetRandFireRate();
-			}
-			//void Increase PowerUpTimer();
-		}
-	}
-	else 
-	{
-		m_RapidFireRate = 1;
-	}
+	Blaster::SetCooldownBoost(m_RapidFireRate);
+
+	//if (isActive != false)
+	//{
+	//	if (isStackable == false)
+	//	{
+	//		if (m_RapidFireRate <= 8)
+	//		{
+	//			if (RapidFireType == 1 && isStackable == false) //rand non-stack
+	//			{
+	//				SetRandFireRate();
+	//			}
+	//			else if (RapidFireType == 2 && isStackable == false) //double non-stack
+	//			{
+	//				m_RapidFireRate = 2;
+	//			}
+	//			else if (RapidFireType == 3 && isStackable == false) //triple non-stack
+	//			{
+	//				m_RapidFireRate = 3;
+	//			}
+	//		}
+	//	}
+	//	else
+	//	{
+	//		if (RapidFireType == 4 && isStackable == true) //triple non-stack
+	//		{
+	//			m_RapidFireRate = 2;
+	//		}
+	//		else if (RapidFireType == 5 && isStackable == true) //triple non-stack
+	//		{
+	//			m_RapidFireRate = 3;
+	//		}
+	//		else if (RapidFireType == 6 && isStackable == true) //triple non-stack
+	//		{
+	//			SetRandFireRate();
+	//		}
+	//		//void Increase PowerUpTimer();
+	//	}
+	//}
+	//else 
+	//{
+	//	m_RapidFireRate = 1;
+	//}
 }
 		
 
@@ -146,20 +148,19 @@ void PowerUp::SetRandFireRate() {
 }
 //void ResetPowerUpTimer(){}
 
+
 void PowerUp::ActivatePowerUp()
 {
 	if (m_type == SpeedBoost) {}
 	else if (m_type == RapidFire) {PowerUp::RapidFireMethod();}
 	else if (m_type == Shield) {}
 	else if (m_type == ExtraDamage) {}
-	else
+	/*else
 	{
-		PowerUp::Deactivate();
+		m_type = none;
 	}
+	
+	when timer runs out set poweruptye to none*/
 }
 
-void PowerUp::Deactivate()
-{
-	m_type = none;
-	isActive = false;
-}
+

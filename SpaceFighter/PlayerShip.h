@@ -14,6 +14,10 @@ public:
 	PlayerShip() { }
 	virtual ~PlayerShip() { }
 
+	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
+
+	virtual void SetWeaponTexture(Texture* pTexture) { m_pTexture = pTexture; }
+
 	virtual void LoadContent(ResourceManager *pResourceManager);
 
 	virtual void Update(const GameTime *pGameTime);
@@ -40,12 +44,15 @@ public:
 		return type;
 	}
 
+	// We should modify PlayerShip boos instead of Blaster directly
 	virtual void SetBoost(float &m_pRapidFireRate) 
 	{
 		float boost;
 		boost = *&m_pRapidFireRate;
 	}
-	virtual void ActivatePowerUp();
+
+	
+
 
 protected:
 
@@ -66,5 +73,7 @@ private:
 	bool m_isConfinedToScreen = false;
 
 	Texture *m_pTexture = nullptr;
+
+	Texture* m_pBulletTexture = nullptr;
 
 };

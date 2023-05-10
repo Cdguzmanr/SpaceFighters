@@ -16,10 +16,9 @@ void PlayerShootsEnemy(GameObject *pObject1, GameObject *pObject2)
 	pEnemyShip->Hit(pPlayerProjectile->GetDamage());
 	if (!pEnemyShip->IsActive())
 	{
-		PowerUp* pPowerUp = new PowerUp();
-		pPowerUp->SetTexture(pEnemyShip->GetCurrentLevel()->GetPowerUpTexture());
+		PowerUp* pPowerUp = pEnemyShip->GetCurrentLevel()->GetPowerUp();
 		pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
-		pEnemyShip->GetCurrentLevel()->AddGameObject(pPowerUp);
+		
 	}
 	pPlayerProjectile->Deactivate();
 }
@@ -36,9 +35,37 @@ void PlayerCollidesWithEnemy(GameObject *pObject1, GameObject *pObject2)
 void PlayerCollidesWithPowerUp(GameObject* pObject1, GameObject* pObject2)
 {
 	bool m = pObject1->HasMask(CollisionType::PLAYER);
+
+	// Calls Objects to set sprites
 	PlayerShip* pPlayerShip = (PlayerShip*)((m) ? pObject1 : pObject2);
+	Projectile* pProjectile = (Projectile*)((m) ? pObject1 : pObject2);
 	PowerUp* pPowerUp = (PowerUp*)((!m) ? pObject1 : pObject2);
+
+	
 	// TODO: Effect on PlayerShip
+		
+		// 1- Change Ship and bullet Textures
+	if (pPlayerShip->IsActive())
+	{
+
+		pPlayerShip->SetTexture(pPlayerShip->GetCurrentLevel()->GetPowerUpShipTexture());
+		pProjectile->SetTexture(pProjectile->GetCurrentLevel()->GetPowerUpBulletTexture());
+
+
+		// 2- Choose random power up
+		/*
+		pPowerUp->m_type = enum random value
+		*/
+
+
+		// Testing 
+		pPowerUp->SetType(PowerUp::RapidFire);
+
+
+		// 3- Make PowerUp effect
+		pPowerUp->ActivatePowerUp();
+	}
+
 	pPowerUp->Deactivate();
 	
 }
@@ -73,6 +100,7 @@ Level::Level()
 		AddGameObject(pProjectile);
 	}
 	
+	
 	m_pPlayerShip->Activate();
 	AddGameObject(m_pPlayerShip);
 
@@ -104,9 +132,28 @@ Level::~Level()
 
 
 void Level::LoadContent(ResourceManager *pResourceManager)
-{
+{	
 	m_pPlayerShip->LoadContent(pResourceManager);
-	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PlayerShip.png");
+
+	// Load background texture
+	m_pTexture = pResourceManager->Load<Texture>("Textures\\background-space.png");
+	m_texturePosition = Game::GetScreenCenter();
+
+
+
+	// Load textures for Power ups
+	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PowerUp1.png");
+	m_pPowerUpBulletTexture = pResourceManager->Load<Texture>("Textures\\BulletRed.png");
+	m_pPowerUpShipTexture = pResourceManager->Load<Texture>("Textures\\PlayerShipRed.png");
+
+	for (int i = 0; i < 4; i++)
+	{
+		PowerUp* pPowerUp = new PowerUp();
+		pPowerUp->SetTexture(GetPowerUpTexture());
+
+		m_PowerUps.push_back(pPowerUp);
+		AddGameObject(pPowerUp);
+	}
 }
 
 
@@ -177,6 +224,18 @@ void Level::UpdateSectorPosition(GameObject *pGameObject)
 	}
 }
 
+PowerUp* Level::GetPowerUp()
+{
+	m_powerUpIt = m_PowerUps.begin();	
+	for (; m_powerUpIt != m_PowerUps.end(); m_powerUpIt++)
+	{
+		PowerUp* pPowerUp = *m_powerUpIt;
+		if (!pPowerUp->IsActive()) return pPowerUp;
+	}
+
+	return nullptr;
+}
+
 
 
 void Level::CheckCollisions(std::vector<GameObject*>& gameObjects)
@@ -200,7 +259,6 @@ void Level::CheckCollisions(std::vector<GameObject*>& gameObjects)
 					m_pCollisionManager->CheckCollision(pFirst, pSecond);
 				}
 			}
-
 		}
 	}
 }
@@ -208,6 +266,9 @@ void Level::CheckCollisions(std::vector<GameObject*>& gameObjects)
 void Level::Draw(SpriteBatch *pSpriteBatch)
 {
 	pSpriteBatch->Begin();
+
+	pSpriteBatch->Draw(m_pTexture, m_texturePosition, Color::White, m_pTexture->GetCenter()); // Draw background
+
 
 	m_gameObjectIt = m_gameObjects.begin();
 	for (; m_gameObjectIt != m_gameObjects.end(); m_gameObjectIt++)
