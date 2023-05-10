@@ -1,6 +1,7 @@
 #include "PowerUp.h"
 #include <random>
 #include "Blaster.h"
+#include "Level.h"
 
 // code in progress
 
@@ -68,7 +69,7 @@ void PowerUp::RapidFireMethod()
 {
 	//GetRapidFireType();
 	m_RapidFireRate = 2;
-	GetCurrentLevel();
+	GetCurrentLevel()->GetPlayerShip(PlayerShip m_pPlayerShip);
 	Blaster::SetCooldownBoost(m_RapidFireRate);
 
 	//if (isActive != false)
