@@ -68,8 +68,8 @@ void PowerUp::RapidFireMethod()
 {
 	//GetRapidFireType();
 	m_RapidFireRate = 2;
-
-	Blaster::SetCooldownBoost(m_RapidFireRate);
+	GetCurrentLevel(PlayerShip::playerShip);
+	//Blaster::SetCooldownBoost(m_RapidFireRate);
 
 	//if (isActive != false)
 	//{

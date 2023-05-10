@@ -46,6 +46,8 @@ public:
 
 	virtual std::string ToString() const { return "PowerUp"; }
 
+	virtual float GetRapidFireRate() { return m_RapidFireRate; }
+
 
 	virtual void RapidFireMethod();
 	virtual void GetRapidFireType();
