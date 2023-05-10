@@ -2,6 +2,7 @@
 
 #include "GameObject.h"
 #include "BioEnemyShip.h"
+//powerup needs to know about level then level knows about playership and can be used to get the blaster instance to affect it
 
 
 class PowerUp : public GameObject

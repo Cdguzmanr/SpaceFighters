@@ -68,7 +68,7 @@ void PowerUp::RapidFireMethod()
 {
 	//GetRapidFireType();
 	m_RapidFireRate = 2;
-
+	GetCurrentLevel();
 	Blaster::SetCooldownBoost(m_RapidFireRate);
 
 	//if (isActive != false)
