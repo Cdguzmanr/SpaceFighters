@@ -14,10 +14,13 @@
 
 #include "KatanaEngine.h"
 
+
+
 namespace KatanaEngine
 {
 	int Game::s_screenWidth = 800;
 	int Game::s_screenHeight = 600;
+	
 
 	std::string Game::s_contentDirectory = "..\\Content\\";
 	std::string Game::s_windowTitle = "Game";

@@ -53,7 +53,9 @@ public:
 	virtual bool IsMask(CollisionType mask) const { return (GetCollisionType() == mask); }
 
 	virtual bool IsDrawnByLevel() const { return true; }
-
+	
+	//for the KillCounter class
+	static int GetCountOfKills() { return m_sKill; } // return the kill count
 
 protected:
 
@@ -83,5 +85,7 @@ private:
 	Vector2 m_previousPosition;
 
 	float m_collisionRadius;
+
+	static int m_sKill; // so that the kill count can be accessed by the KillCounter class
 };
 
