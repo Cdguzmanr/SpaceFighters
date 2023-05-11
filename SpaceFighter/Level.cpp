@@ -17,10 +17,10 @@ void PlayerShootsEnemy(GameObject* pObject1, GameObject* pObject2)
 	if (!pEnemyShip->IsActive())
 	{
 		PowerUp* pPowerUp = pEnemyShip->GetCurrentLevel()->GetPowerUp();
-		pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
+		if (pPowerUp)pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
 
 	}
-	pPlayerProjectile->Deactivate();
+	pPlayerProjectile->Deactivate(); 
 }
 
 void PlayerCollidesWithEnemy(GameObject* pObject1, GameObject* pObject2)
