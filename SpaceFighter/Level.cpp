@@ -146,7 +146,7 @@ void Level::LoadContent(ResourceManager* pResourceManager)
 
 
 	// Load textures for Power ups
-	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PowerUp1.png");
+	m_pPowerUpTexture = pResourceManager->Load<Texture>("Textures\\PowerUpF.png");
 	m_pPowerUpBulletTexture = pResourceManager->Load<Texture>("Textures\\BulletRed.png");
 	m_pPowerUpShipTexture = pResourceManager->Load<Texture>("Textures\\PlayerShipRed.png");
 
