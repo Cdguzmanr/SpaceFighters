@@ -25,7 +25,8 @@ public:
 	// virtual void SetCooldownBoost(const float boost);
 
 
-	virtual void SpeedBooster();
+	virtual float SpeedBooster();
+	virtual void GetSpeedBoost();
 
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 

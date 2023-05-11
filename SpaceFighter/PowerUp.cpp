@@ -60,8 +60,15 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 //	 //SetCooldownBoost(2);	
 //}
 
-void PowerUp::SpeedBooster() {
+float PowerUp::SpeedBooster() 
+{
+	if (isActive == true) {
 
+	}
+}
+
+void PowerUp::GetSpeedBoost()
+{
 }
 
 
@@ -119,7 +126,7 @@ void PowerUp::RapidFireMethod()
 
 
 
-void PowerUp::GetRapidFireType()
+void PowerUp::GetType()
 {
 	int min = 1;
 	int max = 6;
@@ -153,16 +160,16 @@ float PowerUp::SetRandFireRate() {
 
 void PowerUp::ActivatePowerUp()
 {
-	//if (m_type == SpeedBoost) {}
-	if (m_type == RapidFire) { isActive = true; RapidFireMethod(); }
+	if (m_type == SpeedBoost) {isActive = true; SpeedBooster();}
+	else if (m_type == RapidFire) { isActive = true; RapidFireMethod(); }
 	//else if (m_type == Shield) {}
 	//else if (m_type == ExtraDamage) {}
-	/*else
+	else
 	{
 		m_type = none;
 	}
 	
-	when timer runs out set poweruptye to none*/
+	//when timer runs out set poweruptye to none
 }
 
 
