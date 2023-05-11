@@ -4,6 +4,7 @@
 #include "Weapon.h"
 #include "PowerUp.h"
 #include "PlayerShip.h"
+#include <iostream>
 
 
 class Blaster : public Weapon
@@ -52,6 +53,12 @@ public:
 
 					pProjectile->Activate(GetPosition(), true);
 					m_cooldown = m_cooldownSeconds;
+
+					int bulletCount{};
+					m_cooldownSeconds = (m_cooldownBoost > 0) ? 0.35 / m_cooldownBoost : 1;
+					std::cout << "Bullet count: " << bulletCount << "\n";
+					std::cout << "Fire Rate: " << m_cooldownSeconds << "\n";
+					bulletCount++;
 					
 				}
 			}
@@ -73,7 +80,7 @@ private:
 	
 	float m_cooldown;
 	float m_cooldownSeconds;
-	float m_cooldownBoost;
+	float m_cooldownBoost = 1;
 
 
 };

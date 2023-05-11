@@ -51,6 +51,7 @@ void Ship::FireWeapons(TriggerType type)
 	for (; m_weaponIt != m_weapons.end(); m_weaponIt++)
 	{
 		(*m_weaponIt)->Fire(type);
+		
 	}
 }
 
