@@ -2,19 +2,30 @@
 
 #include "GameObject.h"
 #include "BioEnemyShip.h"
+//powerup needs to know about level then level knows about playership and can be used to get the blaster instance to affect it
+class PlayerShip;
 
 class PowerUp : public GameObject
 {
+	
 public:
 	enum PowerUpType {
-		RapidFire = 1,
-		SpeedBoost,
+		none = 0,
+		SpeedBoost = 1,
+		RapidFire = 2,
+		
 		Shield,
 		ExtraDamage
 	};
 
+	//todo get the methods built
+
 	PowerUp();
-	virtual ~PowerUp() { }
+
+	// virtual void SetCooldownBoost(const float boost);
+
+
+	virtual void SpeedBooster();
 
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
@@ -36,8 +47,17 @@ public:
 
 	virtual std::string ToString() const { return "PowerUp"; }
 
-	virtual void GetPowerUpRandom();
-	
+	virtual float GetRapidFireRate() { return m_RapidFireRate; }
+
+
+	virtual void RapidFireMethod();
+	virtual void GetRapidFireType();
+	virtual float SetRandFireRate();
+
+
+	virtual void ActivatePowerUp();
+
+
 private:
 	double m_delaySeconds;
 
@@ -49,8 +69,16 @@ private:
 
 	PowerUpType m_type;
 	
+
 	Texture* m_pTexture = nullptr;
 
+	
 
+	bool isActive;
+
+	int RapidFireType;
+	float m_RapidFireRate = 1.0;
+	bool isStackable;
+	float randFireRate;
 };
 

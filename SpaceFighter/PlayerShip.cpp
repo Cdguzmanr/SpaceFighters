@@ -2,6 +2,8 @@
 #include "PlayerShip.h"
 
 
+
+
 void PlayerShip::LoadContent(ResourceManager* pResourceManager)
 {
 	ConfineToScreen();
@@ -58,9 +60,6 @@ void PlayerShip::Update(const GameTime* pGameTime)
 			m_velocity.Y = 0;
 		}
 	}
-
-	// do any updates that a normal ship would do.
-	// (fire weapons, collide with objects, etc.)
 	Ship::Update(pGameTime);
 }
 
@@ -127,7 +126,11 @@ Vector2 PlayerShip::GetHalfDimensions() const
 	return m_pTexture->GetCenter();
 }
 
+
+
 void PlayerShip::SetResponsiveness(const float responsiveness)
 {
 	m_responsiveness = Math::Clamp(0, 1, responsiveness);
 }
+
+

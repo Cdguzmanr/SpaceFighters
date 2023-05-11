@@ -2,6 +2,7 @@
 #pragma once
 
 #include "GameObject.h"
+
 #include "Weapon.h"
 
 
@@ -33,14 +34,14 @@ public:
 
 	virtual void SetMaxHitPoints(const float hitPoints) { m_maxHitPoints = hitPoints; }
 
+	virtual Weapon *GetWeapon(const int index) { if (index < m_weapons.size()) return m_weapons[index]; return nullptr; }
+
 
 protected:
 
 	virtual void Initialize();
 
 	virtual void FireWeapons(TriggerType type = TriggerType::ALL);
-
-	virtual Weapon *GetWeapon(const int index) { if (index < m_weapons.size()) return m_weapons[index]; return nullptr; }
 
 	virtual float GetHitPoints() const { return m_hitPoints; }
 

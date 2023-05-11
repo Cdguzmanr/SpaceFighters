@@ -2,6 +2,8 @@
 #pragma once
 
 #include "Ship.h"
+#include "PowerUp.h"
+
 
 
 class PlayerShip : public Ship
@@ -11,6 +13,10 @@ public:
 
 	PlayerShip() { }
 	virtual ~PlayerShip() { }
+
+	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
+
+	virtual void SetWeaponTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
 	virtual void LoadContent(ResourceManager *pResourceManager);
 
@@ -32,6 +38,21 @@ public:
 
 	virtual void ConfineToScreen(const bool isConfined = true) { m_isConfinedToScreen = isConfined; }
 
+	virtual PowerUp::PowerUpType GetPowerUpType(PowerUp::PowerUpType &m_pType) 
+	{
+		PowerUp::PowerUpType type = *&m_pType;
+		return type;
+	}
+
+	// We should modify PlayerShip boos instead of Blaster directly
+	virtual void SetBoost(float &m_pRapidFireRate) 
+	{
+		float boost;
+		boost = *&m_pRapidFireRate;
+	}
+
+	
+
 
 protected:
 
@@ -52,5 +73,7 @@ private:
 	bool m_isConfinedToScreen = false;
 
 	Texture *m_pTexture = nullptr;
+
+	Texture* m_pBulletTexture = nullptr;
 
 };

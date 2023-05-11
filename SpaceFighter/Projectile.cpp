@@ -52,7 +52,6 @@ void Projectile::Activate(const Vector2 &position, bool wasShotByPlayer)
 {
 	m_wasShotByPlayer = wasShotByPlayer;
 	SetPosition(position);
-
 	GameObject::Activate();
 }
 

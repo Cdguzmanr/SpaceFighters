@@ -4,6 +4,7 @@
 #include "KatanaEngine.h"
 #include "PlayerShip.h"
 #include "CollisionManager.h"
+#include "PowerUp.h"
 
 using namespace KatanaEngine;
 
@@ -33,7 +34,15 @@ public:
 
 	virtual void SetGameplayScreen(GameplayScreen* pGameplayScreen) { m_pGameplayScreen = pGameplayScreen; }
 
-	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }
+	virtual Texture* GetPowerUpTexture() { return m_pPowerUpTexture; }
+
+	virtual Texture* GetPowerUpShipTexture() { return m_pPowerUpShipTexture; }
+
+	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
+
+	
+
+	virtual PowerUp* GetPowerUp();
 
 	template <typename T>
 	T* GetClosestObject(const Vector2 position, const float range)
@@ -70,6 +79,7 @@ public:
 		return pClosest;
 	}
 
+	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; }
 
 protected:
 
@@ -78,6 +88,8 @@ protected:
 	virtual void SetBackgroundAudio(AudioSample* pAudio) { m_pAudio = pAudio; }
 
 	virtual AudioSample* GetBackgroundAudio() { return m_pAudio; }
+
+	
 
 private:
 
@@ -97,10 +109,25 @@ private:
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*>::iterator m_gameObjectIt;
 
-	PlayerShip* m_pPlayerShip;	
-	
+	//Background
+	Texture* m_pTexture;
+
+	Vector2 m_texturePosition;
+
+
+	PlayerShip* m_pPlayerShip;
+
+	// Power up knows about level
+	//- 2- 
+
+	// Object Textures
 	Texture* m_pPowerUpTexture;
+	Texture* m_pPowerUpBulletTexture;
+	Texture* m_pPowerUpShipTexture;
+
 	std::vector<Projectile*> m_projectiles;
+	std::vector<PowerUp*> m_PowerUps;
+	std::vector<PowerUp*>::iterator m_powerUpIt;
 
 	//background
 	Texture* m_pTexture;

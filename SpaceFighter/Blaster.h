@@ -2,6 +2,10 @@
 #pragma once
 
 #include "Weapon.h"
+#include "PowerUp.h"
+#include "PlayerShip.h"
+#include <iostream>
+
 
 class Blaster : public Weapon
 {
@@ -12,7 +16,7 @@ public:
 	{
 		// Assignment 6.B Wepon cooldown -- Shoot Faster 
 		m_cooldown = 0; 
-		m_cooldownSeconds = 0.25; // old: 0.35
+		m_cooldownSeconds = 0.35 / m_cooldownBoost; // old: 0.35
 	}
 
 	virtual ~Blaster() { }
@@ -28,7 +32,12 @@ public:
 
 	virtual float GetCooldownSeconds() { return m_cooldownSeconds; }
 
-	virtual void SetCooldownSeconds(const float seconds) { m_cooldownSeconds = seconds; }
+	virtual void SetCooldownBoost(const float boost)
+	{ 
+
+		m_cooldownBoost = boost;	
+	}
+	
 
 	virtual void Fire(TriggerType triggerType)
 	{
@@ -44,15 +53,34 @@ public:
 
 					pProjectile->Activate(GetPosition(), true);
 					m_cooldown = m_cooldownSeconds;
+
+					int bulletCount{};
+					m_cooldownSeconds = (m_cooldownBoost > 0) ? 0.35 / m_cooldownBoost : 1;
+					std::cout << "Bullet count: " << bulletCount << "\n";
+					std::cout << "Fire Rate: " << m_cooldownSeconds << "\n";
+					bulletCount++;
+					
 				}
 			}
 		}
 	}
+	//void PowerUp::GetType(PlayerShip::PlayerShip playership)
 
+
+	/*PowerUp::PowerUp();
+	* 
+	/*PowerUp powerUp = PowerUp();
+
+	virtual PowerUp::PowerUpType GetType(PowerUp::PowerUpType* m_pType) const { return PowerUp::&m_pType; }
+
+	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::m_pType = type; }
+	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::PowerUpType->m_pType = type; }*/
 
 private:
-
+	
 	float m_cooldown;
 	float m_cooldownSeconds;
+	float m_cooldownBoost = 1;
+
 
 };
