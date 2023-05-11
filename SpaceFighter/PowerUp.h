@@ -52,7 +52,7 @@ public:
 
 	virtual void RapidFireMethod();
 	virtual void GetRapidFireType();
-	virtual void SetRandFireRate();
+	virtual float SetRandFireRate();
 
 
 	virtual void ActivatePowerUp();
