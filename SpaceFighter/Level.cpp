@@ -184,7 +184,7 @@ void Level::HandleInput(const InputState* pInput)
 }
 
 
-void Level::Update(const GameTime *pGameTime)
+void Level::Update(const GameTime* pGameTime)
 {
 	for (unsigned int i = 0; i < m_totalSectorCount; i++)
 	{
