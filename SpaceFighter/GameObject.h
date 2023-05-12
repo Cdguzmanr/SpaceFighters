@@ -55,6 +55,8 @@ public:
 	virtual bool IsDrawnByLevel() const { return true; }
 	
 	//for the KillCounter class
+
+	virtual void SetKillCounter(const int scoreAddon) { m_sKill += scoreAddon; }
 	static int GetCountOfKills() { return m_sKill; } // return the kill count
 
 protected:
@@ -86,6 +88,6 @@ private:
 
 	float m_collisionRadius;
 
-	static int m_sKill; // so that the kill count can be accessed by the KillCounter class
+	static int m_sKill; // so that the kill count can be accessed by  a inherited class 
 };
 

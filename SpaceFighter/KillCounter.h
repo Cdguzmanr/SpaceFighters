@@ -1,28 +1,29 @@
 #pragma once
 #include "GameObject.h"
 
-using namespace std;
 
 
 class KillCounter : public GameObject
 {
 	public:
-		KillCounter() {}; //  constructor
-		virtual ~KillCounter() { }; // destructor
+		KillCounter() { } //  constructor
+		virtual ~KillCounter() { } // destructor
 
-		virtual void LoadContent(ResourceManager* pResourceManager); // to be defined in cpp
-		virtual void Update(GameTime* pGameTime); // to be defined in cpp
+		virtual void Draw(SpriteBatch* pSpriteBatch); 
 
-		virtual void Draw(SpriteBatch* pSpriteBatch); // to be defined in cpp
+		virtual void LoadContent(ResourceManager* pResourceManager); 
+		virtual void Update(const GameTime* pGameTime); // to be defined in cpp
+
 	
-		virtual string ToString() { return "KillCounter"; } // could be const
+		virtual std:: string ToString() const { return "KillCounter"; } // could be const
 	
 		virtual CollisionType GetCollisionType() const { return (CollisionType::NONE | CollisionType::NONE); }
 
 
+
 private: 
 
-	std::string m_text;
+	std:: string m_text;
 
 	bool m_isDisplayed;
 
@@ -39,7 +40,6 @@ private:
 
 	TextAlign m_textAlign;
 
-	int m_killCount;
 
 
 };

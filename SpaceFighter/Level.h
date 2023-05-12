@@ -4,10 +4,14 @@
 #include "KatanaEngine.h"
 #include "PlayerShip.h"
 #include "CollisionManager.h"
+#include "PowerUp.h"
+
 
 using namespace KatanaEngine;
 
 class GameplayScreen;
+//class KillCounter;
+
 
 class Level
 {
@@ -23,9 +27,9 @@ public:
 
 	virtual void HandleInput(const InputState* pInput);
 
-	virtual void Update(const GameTime* pGameTime);
+	virtual void Update(const GameTime *pGameTime);
 
-	virtual void Draw(SpriteBatch* pSpriteBatch);
+	virtual void Draw(SpriteBatch *pSpriteBatch);
 
 	virtual void AddGameObject(GameObject* pGameObject) { m_gameObjects.push_back(pGameObject); }
 
@@ -33,7 +37,15 @@ public:
 
 	virtual void SetGameplayScreen(GameplayScreen* pGameplayScreen) { m_pGameplayScreen = pGameplayScreen; }
 
-	virtual Texture* GetPowerUpTexture(){ return m_pPowerUpTexture; }
+	virtual Texture* GetPowerUpTexture() { return m_pPowerUpTexture; }
+
+	virtual Texture* GetPowerUpShipTexture() { return m_pPowerUpShipTexture; }
+
+	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
+
+	
+
+	virtual PowerUp* GetPowerUp();
 
 	template <typename T>
 	T* GetClosestObject(const Vector2 position, const float range)
@@ -70,6 +82,7 @@ public:
 		return pClosest;
 	}
 
+	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; }
 
 protected:
 
@@ -78,6 +91,8 @@ protected:
 	virtual void SetBackgroundAudio(AudioSample* pAudio) { m_pAudio = pAudio; }
 
 	virtual AudioSample* GetBackgroundAudio() { return m_pAudio; }
+
+	
 
 private:
 
@@ -97,14 +112,27 @@ private:
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*>::iterator m_gameObjectIt;
 
-	PlayerShip* m_pPlayerShip;	
-	
-	Texture* m_pPowerUpTexture;
-	std::vector<Projectile*> m_projectiles;
-
-	//background
+	//Background
 	Texture* m_pTexture;
+
 	Vector2 m_texturePosition;
+
+
+	PlayerShip* m_pPlayerShip;
+
+	// Power up knows about level
+	//- 2- 
+
+	// Object Textures
+	Texture* m_pPowerUpTexture;
+	Texture* m_pPowerUpBulletTexture;
+	Texture* m_pPowerUpShipTexture;
+
+	std::vector<Projectile*> m_projectiles;
+	std::vector<PowerUp*> m_PowerUps;
+	std::vector<PowerUp*>::iterator m_powerUpIt;
+
+
 
 	void CheckCollisions(std::vector<GameObject*>& sector);
 
@@ -115,5 +143,12 @@ private:
 	virtual unsigned int GetTotalSectorCount() const { return m_totalSectorCount; }
 
 	virtual std::vector<GameObject*>* GetSectors() { return m_pSectors; }
+
+	//background
+	Texture* m_pTexture;
+	Vector2 m_texturePosition;
+
+	//Kill counter
+	KillCounter *m_pKillCounter;
 
 };

@@ -6,6 +6,7 @@ Ship::Ship()
 {
 	SetPosition(0, 0);
 	SetCollisionRadius(10);
+	SetKillAddPoints(0);
 
 	m_speed = 300;
 	m_maxHitPoints = 3;
@@ -33,7 +34,7 @@ void Ship::Hit(const float damage)
 
 		if (m_hitPoints <= 0)
 		{
-			
+			SetKillCounter(m_killPoints);
 			GameObject::Deactivate();
 			
 		}
@@ -51,6 +52,7 @@ void Ship::FireWeapons(TriggerType type)
 	for (; m_weaponIt != m_weapons.end(); m_weaponIt++)
 	{
 		(*m_weaponIt)->Fire(type);
+		
 	}
 }
 

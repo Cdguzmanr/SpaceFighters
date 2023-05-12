@@ -1,15 +1,19 @@
 #include "KillCounter.h"
 
-using namespace std;
+//using namespace std;
+
+//int KillCounter::m_sKill = 0; // initialize the static variable
 
 void KillCounter::LoadContent(ResourceManager* pResourceManager)
 {
 	m_pFont = pResourceManager->Load<Font>("Fonts\\Ethnocentric.tff");
-	
+	m_text = ("Kill Counter :  " + std::to_string(GetCountOfKills()));
+
 	
 	m_color = Color::Yellow;
 	m_alpha= 1.0f;
-	m_position = Vector2::ZERO; // could be zero
+
+	m_position = Vector2::ZERO; 
 	m_textOffset = Vector2::ZERO;	
 	m_textAlign = TextAlign::LEFT;
 
@@ -20,9 +24,9 @@ void KillCounter::Draw(SpriteBatch* pSpriteBatch)
 
 }
 
-void KillCounter::Update(GameTime* pGameTime)
+void KillCounter::Update(const GameTime* pGameTime)
 {
-	m_text = ("Kill Counter :  " + to_string(GetCountOfKills()));//
+	m_text = ("Kill Counter :  " + std:: to_string(GetCountOfKills()));
 	GameObject::Update(pGameTime);
 }
 
