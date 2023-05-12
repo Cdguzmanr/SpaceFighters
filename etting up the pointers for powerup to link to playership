@@ -1,0 +1,80 @@
+[33m88e3d39[m[33m ([m[1;36mHEAD -> [m[1;32mGerald[m[33m, [m[1;31morigin/Gerald[m[33m)[m "Resolving merge conflicts"
+[33m410fd70[m Kill Counter Class
+[33m0bbd90b[m Resolving merge conflict when Merging Tyler's  changes into Gerald's branch
+[33mbf96332[m mergin master into Gerald's branch
+[33m0fa8a74[m[33m ([m[1;31morigin/speedboostTyler[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/TNSpeedBoostTimer[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m Merge branch 'master' of https://bitbucket.org/silvershadow1243/newspacefighter.g.t.a.c
+[33m593ae36[m rapid fire is done just need to set timer for it
+[33m031b391[m Update Game Sprites: New ship and PowerUps)
+[33m232ee3a[m added space for pull/push
+[33m63e28f0[m[33m ([m[1;31morigin/TylerBranch[m[33m)[m test rapid fire success
+[33m21e27f9[m almost have rapid fire ready for testing but got stuck; no longer trying to SetCooldownBoost in RapidFireMethod instead doing it in Level.cpp
+[33m277fc2b[m pre pull commit
+[33me9df803[m got farther on the connection but struggle to acquire playership for getting blaster
+[33m6cd5929[m Merge branch 'TylerBranch' of https://bitbucket.org/silvershadow1243/newspacefighter.g.t.a.c into TylerBranch
+[33m7b58bed[m making sure all up to date
+[33m18613dd[m fixed merge conflicts
+[33m3b2725c[m pre merge commit?
+[33m43d5a1d[m /powerup needs to know about level then level knows about playership and can be used to get the blaster instance to affect it-- this needs to happen
+[33m820fdec[m pre merge commit
+[33m36bc9f1[m merge commit
+[33m7bc8f6c[m pushing before a pull
+[33m511c038[m made ActivatePowerUp();exploding need help, set pointers to get values from powerup.h in this file, moved code to set cooldownSeconds with powerup from blaster to playership, worked on setting up the power ups
+[33m72b803a[m almost finished RapidFireMethod()
+[33m8b76532[m trying to connect the powerup and playership classes
+[33mc593ffe[m setting up the pointers for powerup to link to playership
+[33m2a640bf[m continued work hooking up the power up
+[33m0ff76fe[m Merge conflics solved
+[33m8960734[m[33m ([m[1;31morigin/Andres[m[33m)[m Added GetPowerUp function to the level
+[33m411d058[m Added GetPowerUp function to the level
+[33me815780[m[33m ([m[1;31morigin/Carlos[m[33m)[m Merged
+[33me92af7a[m Error solved on leve01.h
+[33mf104072[m Carlos Branch with master
+[33mb3557ba[m Changes to merge with master
+[33m86577f1[m fixed merge issues
+[33me4a066c[m pre merge commit
+[33me4bcd0c[m fixed merge errors again
+[33m083c51c[m fixed merge errors made; nipped merge errors
+[33mcb1cc4d[m Sprites of PowerUp Ship and bullet added and implemented into code
+[33me2de972[m started connector method for rapid fire
+[33m1682977[m Changes to merge with master
+[33mca70640[m method to randomly generate power ups type
+[33m7924195[m making sure my changes were pushed
+[33me97a14f[m started reworking the rapid fire method
+[33m91b30e9[m Sprites of PowerUp Ship and bullet added and implemented into code
+[33m16f6ed3[m Background set up
+[33md3d0ce8[m started reworking power up and started linking it in ship
+[33m8394387[m pulled in andres' code working on RandRapidFiring()
+[33m14b59c4[m Merge branch 'Andres'
+[33m093ba23[m[33m ([m[1;31morigin/TylerBackup[m[33m)[m undid all of the statics and removed test placement of RapidFiring()
+[33m779a288[m Background method
+[33m2c7b80f[m Added PowerUp Class, set the powerups to display after an enemy ship dies, make it disapear once the player ship touches it
+[33m4c35764[m Carlos Code for assignment 6
+[33m5712eaf[m in Level.cpp: included PowerUp.h, in Blaster.h: temporarily made Blaster::m_cooldownSeconds public and made m_cooldownSeconds static for testing, in PlayerShip.cpp: added PowerUp::RapidFiring() to PlayerShip::Update, in PowerUp.h: made min and max static, in PowerUp.h: made RapidFireRate public and static, in PowerUp.h: made SetCooldownSeconds and RapidFiring static
+[33md4cd5f1[m fix
+[33me597f8c[m started the enum for powerup
+[33m2e74228[m started looking into collision and setting up
+[33mf2be1e9[m CollisionReadMe.md edited online with Bitbucket
+[33m08c63e0[m CollisionReadMe.md created online with Bitbucket
+[33m97db43c[m Updated to VS22
+[33m4994e5f[m[33m ([m[1;31morigin/dev[m[33m)[m Added audio resource type
+[33mfe96443[m Fixed Allegro include errors. Added gameplay screen ref to level.
+[33m58e169a[m updated allegro libs
+[33m360531e[m Fixed as many uninitialization warnings as I could
+[33mf79812f[m Fixed Nuget Warnings
+[33m280a609[m Done with Analysis
+[33mdbaae47[m Updated Allegro Version
+[33me79db6e[m README.md edited online with Bitbucket
+[33ma1b0e1f[m README.md edited online with Bitbucket
+[33m30c52aa[m README.md edited online with Bitbucket
+[33me6e5ef5[m Added Class Diagram Images
+[33mbf9814d[m Added Class Diagrams
+[33m1b818d3[m Commented PlayerShip::Update
+[33m10af23a[m README.md edited online with Bitbucket
+[33m245e730[m Edited Readme
+[33mf5b3c2f[m Edited Readme
+[33madbfd7c[m README.md edited online with Bitbucket
+[33m6b3a225[m Edited Readme
+[33m95f3acf[m Renamed Readme
+[33ma3592c1[m README.md deleted online with Bitbucket
+[33m789c709[m README.md created online with Bitbucket
+[33m3a674dc[m Migrating to BitBucket

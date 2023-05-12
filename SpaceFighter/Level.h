@@ -82,7 +82,7 @@ public:
 		return pClosest;
 	}
 
-	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; }
+	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; } 
 
 protected:
 
