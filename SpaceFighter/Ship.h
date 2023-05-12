@@ -4,7 +4,7 @@
 #include "GameObject.h"
 
 #include "Weapon.h"
-#include "KillCounter.h"
+
 
 class Ship : public GameObject
 {
@@ -34,12 +34,9 @@ public:
 
 	virtual void SetMaxHitPoints(const float hitPoints) { m_maxHitPoints = hitPoints; }
 
-	virtual void SetHitPoints(const float hitPoints) { m_hitPoints = hitPoints; }
-
 	virtual Weapon *GetWeapon(const int index) { if (index < m_weapons.size()) return m_weapons[index]; return nullptr; }
 
-	virtual void SetKillAddPoints(const int killPoints) { m_killPoints = killPoints; } //assigning points when ship is hit
-	
+
 protected:
 
 	virtual void Initialize();
@@ -59,8 +56,6 @@ private:
 	float m_maxHitPoints;
 
 	bool m_isInvulnurable;
-
-	int m_killPoints;
 
 	std::vector<Weapon *> m_weapons;
 	std::vector<Weapon *>::iterator m_weaponIt;

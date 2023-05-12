@@ -1,14 +1,11 @@
+
 #include "Level.h"
 #include "EnemyShip.h"
 #include "Blaster.h"
 #include "PowerUp.h"
-#include "GameTime.h"
-//#include "KillCounter.h"
-
 
 
 class PlayerShip;
-
 // Collision Callback Functions
 void PlayerShootsEnemy(GameObject* pObject1, GameObject* pObject2)
 {
@@ -42,10 +39,7 @@ void PlayerCollidesWithPowerUp(GameObject* pObject1, GameObject* pObject2)
 	// Calls Objects to set sprites
 	PlayerShip* pPlayerShip = (PlayerShip*)((m) ? pObject1 : pObject2);
 	Projectile* pProjectile = (Projectile*)((m) ? pObject1 : pObject2);
-	
-
 	PowerUp* pPowerUp = (PowerUp*)((!m) ? pObject1 : pObject2);
-	pPowerUp->Hit(std::numeric_limits<float>::max());
 
 
 	// TODO: Effect on PlayerShip
@@ -126,16 +120,12 @@ Level::Level()
 	pC->AddCollisionType(playerProjectile, enemyShip, PlayerShootsEnemy);
 	pC->AddCollisionType(playerShip, enemyShip, PlayerCollidesWithEnemy);
 	pC->AddCollisionType(playerShip, powerUp, PlayerCollidesWithPowerUp);
-
-	m_pKillCounter = new KillCounter(); // doesn't allow me to instantiate it unless i make a const irtual string ToString() on KillCounter
-
 }
 
 Level::~Level()
 {
 	delete[] m_pSectors;
 	delete m_pCollisionManager;
-	delete m_pKillCounter;
 
 	m_gameObjectIt = m_gameObjects.begin();
 	for (; m_gameObjectIt != m_gameObjects.end(); m_gameObjectIt++)
@@ -147,8 +137,6 @@ Level::~Level()
 
 void Level::LoadContent(ResourceManager* pResourceManager)
 {
-
-
 	m_pPlayerShip->LoadContent(pResourceManager);
 
 	// Load background texture
@@ -170,11 +158,6 @@ void Level::LoadContent(ResourceManager* pResourceManager)
 		m_PowerUps.push_back(pPowerUp);
 		AddGameObject(pPowerUp);
 	}
-
-		m_pKillCounter->LoadContent(pResourceManager);
-
-
-
 }
 
 
@@ -206,7 +189,7 @@ void Level::Update(const GameTime* pGameTime)
 		}
 	}
 
-	m_pKillCounter->Update(pGameTime);
+
 
 }
 
@@ -297,7 +280,6 @@ void Level::Draw(SpriteBatch* pSpriteBatch)
 		GameObject* pGameObject = (*m_gameObjectIt);
 		pGameObject->Draw(pSpriteBatch);
 	}
-	m_pKillCounter->Draw(pSpriteBatch); // draw kill counter
 
 	pSpriteBatch->End();
 }

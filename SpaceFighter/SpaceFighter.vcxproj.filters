@@ -97,9 +97,6 @@
     <ClCompile Include="PowerUp.cpp">
       <Filter>Source Files\Game Objects\PowerUps</Filter>
     </ClCompile>
-    <ClCompile Include="KillCounter.cpp">
-      <Filter>Source Files\Game Objects</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenuScreen.h">
@@ -155,9 +152,6 @@
     </ClInclude>
     <ClInclude Include="PowerUp.h">
       <Filter>Source Files\Game Objects\PowerUps</Filter>
-    </ClInclude>
-    <ClInclude Include="KillCounter.h">
-      <Filter>Source Files\Game Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

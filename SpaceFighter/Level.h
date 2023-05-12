@@ -6,12 +6,9 @@
 #include "CollisionManager.h"
 #include "PowerUp.h"
 
-
 using namespace KatanaEngine;
 
 class GameplayScreen;
-//class KillCounter;
-
 
 class Level
 {
@@ -27,9 +24,9 @@ public:
 
 	virtual void HandleInput(const InputState* pInput);
 
-	virtual void Update(const GameTime *pGameTime);
+	virtual void Update(const GameTime* pGameTime);
 
-	virtual void Draw(SpriteBatch *pSpriteBatch);
+	virtual void Draw(SpriteBatch* pSpriteBatch);
 
 	virtual void AddGameObject(GameObject* pGameObject) { m_gameObjects.push_back(pGameObject); }
 
@@ -82,7 +79,7 @@ public:
 		return pClosest;
 	}
 
-	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; } 
+	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; }
 
 protected:
 
@@ -133,7 +130,6 @@ private:
 	std::vector<PowerUp*>::iterator m_powerUpIt;
 
 
-
 	void CheckCollisions(std::vector<GameObject*>& sector);
 
 	virtual Vector2 GetSectorCount() const { return m_sectorCount; }
@@ -143,12 +139,5 @@ private:
 	virtual unsigned int GetTotalSectorCount() const { return m_totalSectorCount; }
 
 	virtual std::vector<GameObject*>* GetSectors() { return m_pSectors; }
-
-	//background
-	Texture* m_pTexture;
-	Vector2 m_texturePosition;
-
-	//Kill counter
-	KillCounter *m_pKillCounter;
 
 };

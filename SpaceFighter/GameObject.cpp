@@ -5,8 +5,6 @@
 uint32_t GameObject::s_count = 0;
 Level *GameObject::s_pCurrentLevel = nullptr;
 
-int GameObject::m_sKill = 0; // initialize the kill count to 0 (not sure if this could be done in the KillCounter() contructor  )
-
 
 GameObject::GameObject()
 {

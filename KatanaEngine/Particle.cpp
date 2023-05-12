@@ -41,7 +41,7 @@ namespace KatanaEngine
 		
 	}
 
-	void Particle:: Draw(SpriteBatch *pSpriteBatch)
+	void Particle::Draw(SpriteBatch *pSpriteBatch)
 	{
 		if (IsActive())
 		{

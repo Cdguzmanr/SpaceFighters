@@ -2,7 +2,6 @@
 #pragma once
 
 #include "Ship.h"
-#include "Level.h"
 
 class EnemyShip : public Ship
 {

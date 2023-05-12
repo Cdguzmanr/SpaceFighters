@@ -33,7 +33,7 @@ void GameplayScreen::Update(const GameTime *pGameTime)
 	m_pLevel->Update(pGameTime);
 }
 
-void GameplayScreen::Draw(SpriteBatch* pSpriteBatch)
+void GameplayScreen::Draw(SpriteBatch *pSpriteBatch)
 {
 	pSpriteBatch->Begin();
 

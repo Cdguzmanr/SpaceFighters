@@ -30,7 +30,6 @@ public:
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
 	virtual void Update(const GameTime* pGameTime);
-	virtual void Hit( const float damage); //used in PowerUp.cpp 
 
 	virtual void Draw(SpriteBatch* pSpriteBatch);
 
@@ -55,9 +54,8 @@ public:
 	virtual void GetRapidFireType();
 	virtual float SetRandFireRate();
 
+
 	virtual void ActivatePowerUp();
-	
-	virtual void SetKillAddPoints(const int killPoints) { m_killPoints = killPoints; }
 
 
 private:
@@ -82,9 +80,5 @@ private:
 	float m_RapidFireRate = 1.0;
 	bool isStackable;
 	float randFireRate;
-
-	//use in the damage method
-	float m_damagePoints;
-	float m_killPoints;
 };
 

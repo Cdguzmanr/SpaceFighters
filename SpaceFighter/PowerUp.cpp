@@ -9,8 +9,6 @@ PowerUp::PowerUp()
 {
 	SetSpeed(150);
 	SetCollisionRadius(20);
-
-	SetKillAddPoints(20);
 }
 
 void PowerUp::Update(const GameTime* pGameTime)
@@ -152,19 +150,6 @@ float PowerUp::SetRandFireRate() {
 }
 //void ResetPowerUpTimer(){}
 
-
-void PowerUp::Hit(const float damage) {
-	
-	m_killPoints -= damage; //
-
-	if (m_killPoints <= 0) {
-		SetKillCounter(m_damagePoints);// Method to show kill score when enemy is killed
-		
-		Deactivate();
-	}
-
-
-}
 
 void PowerUp::ActivatePowerUp()
 {
