@@ -25,9 +25,9 @@ void PowerUp::Update(const GameTime* pGameTime)
 		{
 			GameObject::Activate();
 		}
-		PowerUpTimer(pGameTime);
+		
 	}
-
+	PowerUpTimer(pGameTime);
 
 	if (IsActive())
 	{
@@ -160,11 +160,16 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 	if (isActive == true)
 	{
     	powerUpDuration -= pGameTime->GetTimeElapsed();
-		if (powerUpDuration >= 6)
+		if (powerUpDuration <= 0)
 		{
-			isActive = false;
+ 			isActive = false;
 			timerIsStarted = false;
-			powerUpDuration = 6;
+			std::cout << "powerup deactivating";
+			if (isActive == false)
+			{
+				powerUpDuration = 6;
+			}
+			
 		}
 	}
 }
