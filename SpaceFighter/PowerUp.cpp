@@ -68,12 +68,10 @@ void PowerUp::SpeedBooster() {
 void PowerUp::RapidFireMethod()
 {
 	GetRapidFireType();
-	m_RapidFireRate = 2;
-
+	PowerUpTimer();
 	
 	if (isActive != false)
 	{
-		std::cout << "\nisActive";
 		if (isStackable == true)
 		{
 			if (m_RapidFireRate <= 8)
@@ -163,6 +161,15 @@ void PowerUp::ActivatePowerUp()
 	}
 	
 	when timer runs out set poweruptye to none*/
+}
+
+void PowerUp::PowerUpTimer()
+{
+	powerUpTimer -= pGamePowerUpTime->GetTimeElapsed();
+	if (!powerUpTimer > 0)
+	{
+		isActive = false;
+	}
 }
 
 
