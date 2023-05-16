@@ -54,7 +54,11 @@ public:
 
 	virtual bool IsDrawnByLevel() const { return true; }
 
+	static int GetKillsCounter() { return m_killsCounter; }
+	
+	virtual void AddKill(const int killsCounter) { m_killsCounter += killsCounter; }
 
+	
 protected:
 
 	virtual void SetCollisionRadius(const int radius) { m_collisionRadius = radius; }
@@ -83,5 +87,10 @@ private:
 	Vector2 m_previousPosition;
 
 	float m_collisionRadius;
+
+	//KillsCounter
+
+	static int m_killsCounter;
+
 };
 

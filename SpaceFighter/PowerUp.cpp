@@ -104,7 +104,6 @@ void PowerUp::RapidFireMethod()
 			{
 				m_RapidFireRate = 3;
 			}
-			//void Increase PowerUpTimer();
 		}
 	}
 	else 

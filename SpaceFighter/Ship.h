@@ -5,6 +5,8 @@
 
 #include "Weapon.h"
 
+#include "KillsCounter.h"
+
 
 class Ship : public GameObject
 {
@@ -35,6 +37,8 @@ public:
 	virtual void SetMaxHitPoints(const float hitPoints) { m_maxHitPoints = hitPoints; }
 
 	virtual Weapon *GetWeapon(const int index) { if (index < m_weapons.size()) return m_weapons[index]; return nullptr; }
+
+	//virtual void SetScoreAddonPoints(const int scorePoints) { m_scorePoints = scorePoints; } // assigns how much points you get when a ship is hit with a projectile
 
 
 protected:

@@ -4,7 +4,7 @@
 
 uint32_t GameObject::s_count = 0;
 Level *GameObject::s_pCurrentLevel = nullptr;
-
+int GameObject::m_killsCounter = 0;
 
 GameObject::GameObject()
 {

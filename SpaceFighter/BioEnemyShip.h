@@ -17,6 +17,7 @@ public:
 
 	virtual void Draw(SpriteBatch *pSpriteBatch);
 
+	//virtual void Hit(const float damage);
 
 private:
 
