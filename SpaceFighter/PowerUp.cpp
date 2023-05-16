@@ -2,7 +2,6 @@
 #include <random>
 #include "Blaster.h"
 #include "Level.h"
-#include <ctime>
 
 // code in progress
 
@@ -26,6 +25,7 @@ void PowerUp::Update(const GameTime* pGameTime)
 		{
 			GameObject::Activate();
 		}
+		PowerUpTimer(pGameTime);
 	}
 
 
@@ -34,7 +34,7 @@ void PowerUp::Update(const GameTime* pGameTime)
 		m_activationSeconds += pGameTime->GetTimeElapsed();
 		if (m_activationSeconds > 2 && !IsOnScreen()) Deactivate();
 	}
-	PowerUpTimer(pGameTime);
+	
 	GameObject::Update(pGameTime);
 }
 
@@ -159,26 +159,14 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 
 	if (isActive == true)
 	{
-		
-		if (timerIsStarted == false)
-		{
-			start = pGameTime->GetTimeElapsed();
-			timerIsStarted = true;
-		}
-		end = pGameTime->GetTimeElapsed();
-
-		GetPowerUpDurationCalc();
-		if (currentPowerUpDuration >= 6)
+    	powerUpDuration -= pGameTime->GetTimeElapsed();
+		if (powerUpDuration >= 6)
 		{
 			isActive = false;
+			timerIsStarted = false;
+			powerUpDuration = 6;
 		}
 	}
-}
-
-float PowerUp::GetPowerUpDurationCalc()
-{
-	currentPowerUpDuration = end - start;
-	return currentPowerUpDuration;
 }
 
 

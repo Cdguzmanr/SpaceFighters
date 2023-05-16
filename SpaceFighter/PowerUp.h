@@ -83,9 +83,8 @@ private:
 	float randFireRate;
 
 	bool timerIsStarted = false;
-	time_t start;
-	time_t end;
-	float currentPowerUpDuration;
-	virtual float GetPowerUpDurationCalc();
+	double start;
+	double end;
+	float powerUpDuration = 6;
 };
 
