@@ -1,6 +1,6 @@
 
 #include "EnemyShip.h"
-
+#include "GameObject.h"
 
 EnemyShip::EnemyShip()
 {
@@ -43,4 +43,5 @@ void EnemyShip::Initialize(const Vector2 position, const double delaySeconds)
 void EnemyShip::Hit(const float damage)
 {
 	Ship::Hit(damage);
+
 }

@@ -5,7 +5,7 @@
 #include "PlayerShip.h"
 #include "CollisionManager.h"
 #include "PowerUp.h"
-
+#include "KillsCounter.h"
 using namespace KatanaEngine;
 
 class GameplayScreen;
@@ -40,7 +40,8 @@ public:
 
 	virtual Texture* GetPowerUpBulletTexture() { return m_pPowerUpBulletTexture; }
 
-	
+//	virtual void SetScoreAddonPoints(const int scorePoints) { m_scorePoints = scorePoints; } // assigns how much points 
+
 
 	virtual PowerUp* GetPowerUp();
 
@@ -81,6 +82,9 @@ public:
 
 	virtual PlayerShip* GetPlayerShip(PlayerShip playerShip) { return m_pPlayerShip; }
 
+
+	//virtual void SetKillsCounter(const int killsCounter) { m_skillsCounter += killsCounter; }
+
 protected:
 
 	virtual CollisionManager* GetCollisionManager() { return m_pCollisionManager; }
@@ -117,6 +121,9 @@ private:
 
 	PlayerShip* m_pPlayerShip;
 
+
+	KillsCounter *m_pKillsCounter;
+
 	// Power up knows about level
 	//- 2- 
 
@@ -140,4 +147,6 @@ private:
 
 	virtual std::vector<GameObject*>* GetSectors() { return m_pSectors; }
 
+	//static int m_skillsCounter;
+	//int m_scorePoints;
 };

@@ -8,6 +8,8 @@ BioEnemyShip::BioEnemyShip()
 	SetSpeed(150);
 	SetMaxHitPoints(1);
 	SetCollisionRadius(20);
+
+
 }
 
 
@@ -45,3 +47,14 @@ void BioEnemyShip::Draw(SpriteBatch *pSpriteBatch)
 		pSpriteBatch->Draw(m_pTexture, GetPosition(), Color::White, m_pTexture->GetCenter(), Vector2::ONE, Math::PI, 1);
 	}
 }
+
+//void BioEnemyShip::Hit(const float damage)
+//{
+//	m_health -= damage;
+//
+//	if (m_health <= 0)
+//	{
+//		m_isActive = false;
+//		GameObject::m_killsCounter++; // increment the kills counter
+//	}
+//}

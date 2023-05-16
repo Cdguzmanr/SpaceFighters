@@ -4,7 +4,6 @@
 #include "Blaster.h"
 #include "PowerUp.h"
 
-
 class PlayerShip;
 // Collision Callback Functions
 void PlayerShootsEnemy(GameObject* pObject1, GameObject* pObject2)
@@ -13,13 +12,29 @@ void PlayerShootsEnemy(GameObject* pObject1, GameObject* pObject2)
 	bool m = pObject1->HasMask(CollisionType::ENEMY);
 	EnemyShip* pEnemyShip = (EnemyShip*)((m) ? pObject1 : pObject2);
 	Projectile* pPlayerProjectile = (Projectile*)((!m) ? pObject1 : pObject2);
+	KillsCounter* pKillsCounter = (KillsCounter*)((!m) ? pObject1 : pObject2);
+
 	pEnemyShip->Hit(pPlayerProjectile->GetDamage());
 	if (!pEnemyShip->IsActive())
 	{
-		PowerUp* pPowerUp = pEnemyShip->GetCurrentLevel()->GetPowerUp();
-		if (pPowerUp)pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
+
+
+		// Generate random power-up
+		int randomNum = Math::GetRandomInt(1, 10);
+		if (randomNum <= 3) // 30% chance of power-up
+		{
+			PowerUp* pPowerUp = pEnemyShip->GetCurrentLevel()->GetPowerUp();
+			if (pPowerUp)
+				pPowerUp->Initialize(pEnemyShip->GetPosition(), 0.1);
+		}
+	    
+		pKillsCounter->AddKill(1); // add to the kill counter score
+
+		
 
 	}
+
+
 	pPlayerProjectile->Deactivate(); 
 }
 
@@ -120,12 +135,16 @@ Level::Level()
 	pC->AddCollisionType(playerProjectile, enemyShip, PlayerShootsEnemy);
 	pC->AddCollisionType(playerShip, enemyShip, PlayerCollidesWithEnemy);
 	pC->AddCollisionType(playerShip, powerUp, PlayerCollidesWithPowerUp);
+
+	m_pKillsCounter = new KillsCounter();
 }
 
 Level::~Level()
 {
 	delete[] m_pSectors;
 	delete m_pCollisionManager;
+
+	delete m_pKillsCounter;
 
 	m_gameObjectIt = m_gameObjects.begin();
 	for (; m_gameObjectIt != m_gameObjects.end(); m_gameObjectIt++)
@@ -140,7 +159,7 @@ void Level::LoadContent(ResourceManager* pResourceManager)
 	m_pPlayerShip->LoadContent(pResourceManager);
 
 	// Load background texture
-	m_pTexture = pResourceManager->Load<Texture>("Textures\\background-space.png");
+	m_pTexture = pResourceManager->Load<Texture>("Textures\\backspace.png");
 	m_texturePosition = Game::GetScreenCenter();
 
 
@@ -158,6 +177,9 @@ void Level::LoadContent(ResourceManager* pResourceManager)
 		m_PowerUps.push_back(pPowerUp);
 		AddGameObject(pPowerUp);
 	}
+
+	m_pKillsCounter->LoadContent(pResourceManager);
+
 }
 
 
@@ -189,7 +211,7 @@ void Level::Update(const GameTime* pGameTime)
 		}
 	}
 
-
+	m_pKillsCounter->Update(pGameTime);
 
 }
 
@@ -280,6 +302,8 @@ void Level::Draw(SpriteBatch* pSpriteBatch)
 		GameObject* pGameObject = (*m_gameObjectIt);
 		pGameObject->Draw(pSpriteBatch);
 	}
+
+	m_pKillsCounter->Draw(pSpriteBatch);
 
 	pSpriteBatch->End();
 }

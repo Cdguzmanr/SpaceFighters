@@ -184,6 +184,7 @@
     <ClCompile Include="PlayerShip.cpp" />
     <ClCompile Include="PowerUp.cpp" />
     <ClCompile Include="Projectile.cpp" />
+    <ClCompile Include="KillsCounter.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="SpaceFighter.cpp" />
     <ClCompile Include="TriggerType.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="EnemyShip.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameplayScreen.h" />
+    <ClInclude Include="KillsCounter.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Level01.h" />
     <ClInclude Include="Level02.h" />
