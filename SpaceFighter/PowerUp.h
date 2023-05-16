@@ -56,7 +56,8 @@ public:
 
 
 	virtual void ActivatePowerUp();
-	virtual void PowerUpTimer();
+	virtual void PowerUpTimer(const GameTime* pGameTime);
+
 
 private:
 	double m_delaySeconds;
@@ -80,8 +81,11 @@ private:
 	float m_RapidFireRate = 1.0;
 	bool isStackable;
 	float randFireRate;
-	float powerUpTimer = 6.0;
 
-	const GameTime* pGamePowerUpTime;
+	bool timerIsStarted = false;
+	time_t start;
+	time_t end;
+	float currentPowerUpDuration;
+	virtual float GetPowerUpDurationCalc();
 };
 

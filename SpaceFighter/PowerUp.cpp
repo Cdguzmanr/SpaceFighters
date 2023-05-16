@@ -2,6 +2,7 @@
 #include <random>
 #include "Blaster.h"
 #include "Level.h"
+#include <ctime>
 
 // code in progress
 
@@ -33,7 +34,7 @@ void PowerUp::Update(const GameTime* pGameTime)
 		m_activationSeconds += pGameTime->GetTimeElapsed();
 		if (m_activationSeconds > 2 && !IsOnScreen()) Deactivate();
 	}
-
+	PowerUpTimer(pGameTime);
 	GameObject::Update(pGameTime);
 }
 
@@ -51,14 +52,6 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 	m_delaySeconds = delaySeconds;
 }
 
-//void PowerUp::RandRapidFiring(PlayerShip* playership) {
-//	 std::random_device rd;
-//	 std::mt19937 gen(rd());
-//	 std::uniform_int_distribution<>dis(min, max);
-//	 RandRapidFireRate = static_cast<float> (dis(gen)) / 10000.0f;
-//	 
-//	 //SetCooldownBoost(2);	
-//}
 
 void PowerUp::SpeedBooster() {
 
@@ -68,7 +61,6 @@ void PowerUp::SpeedBooster() {
 void PowerUp::RapidFireMethod()
 {
 	GetRapidFireType();
-	PowerUpTimer();
 	
 	if (isActive != false)
 	{
@@ -162,13 +154,31 @@ void PowerUp::ActivatePowerUp()
 	when timer runs out set poweruptye to none*/
 }
 
-void PowerUp::PowerUpTimer()
+void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 {
-	powerUpTimer -= pGamePowerUpTime->GetTimeElapsed();
-	if (!powerUpTimer > 0)
+
+	if (isActive == true)
 	{
-		isActive = false;
+		
+		if (timerIsStarted == false)
+		{
+			start = pGameTime->GetTimeElapsed();
+			timerIsStarted = true;
+		}
+		end = pGameTime->GetTimeElapsed();
+
+		GetPowerUpDurationCalc();
+		if (currentPowerUpDuration >= 6)
+		{
+			isActive = false;
+		}
 	}
+}
+
+float PowerUp::GetPowerUpDurationCalc()
+{
+	currentPowerUpDuration = end - start;
+	return currentPowerUpDuration;
 }
 
 
