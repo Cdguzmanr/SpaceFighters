@@ -22,11 +22,6 @@ public:
 
 	PowerUp();
 
-	// virtual void SetCooldownBoost(const float boost);
-
-
-	virtual void SpeedBooster();
-
 	virtual void SetTexture(Texture* pTexture) { m_pTexture = pTexture; }
 
 	virtual void Update(const GameTime* pGameTime);
@@ -47,16 +42,30 @@ public:
 
 	virtual std::string ToString() const { return "PowerUp"; }
 
+
 	virtual float GetRapidFireRate() { return m_RapidFireRate; }
 
-
 	virtual void RapidFireMethod();
+
 	virtual void GetRapidFireType();
+
 	virtual float SetRandFireRate();
 
 
+	virtual void GetSpeedBoostType();
+
+	virtual void SpeedBooster();
+
+	virtual float GetSpeedBoost() { return m_SpeedBoostAmount; }
+
+	virtual float SetRandSpeedBoost();
+
+
 	virtual void ActivatePowerUp();
+
 	virtual void PowerUpTimer(const GameTime* pGameTime);
+
+	virtual void DeactivatePowerUp();
 
 
 private:
@@ -74,15 +83,24 @@ private:
 	Texture* m_pTexture = nullptr;
 
 	
-
 	bool isActive;
 
+	bool SpeedBoostIsActive = false;
+	int SpeedBoostType;
+	float m_SpeedBoostAmount = 1;
+	float RandSpeedBoostAmount;
+	
+	bool RapidFireIsActive = false;
 	int RapidFireType;
 	float m_RapidFireRate = 1.0;
 	bool isStackable;
 	float randFireRate;
 
 	bool timerIsStarted = false;
+	double start;
+	double end;
+	float powerUpDuration = 6;
+
 	time_t start;
 	time_t end;
 	float currentPowerUpDuration;

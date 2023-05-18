@@ -55,7 +55,7 @@ public:
 					m_cooldown = m_cooldownSeconds;
 
 					int bulletCount{};
-					m_cooldownSeconds = (m_cooldownBoost > 0) ? 0.35 / m_cooldownBoost : 1;
+					m_cooldownSeconds = (m_cooldownBoost > 0) ? 0.35 / m_cooldownBoost : 0.35;
 					std::cout << "Bullet count: " << bulletCount << "\n";
 					std::cout << "Fire Rate: " << m_cooldownSeconds << "\n";
 					bulletCount++;

@@ -2,7 +2,6 @@
 #include <random>
 #include "Blaster.h"
 #include "Level.h"
-#include <ctime>
 
 // code in progress
 
@@ -26,15 +25,16 @@ void PowerUp::Update(const GameTime* pGameTime)
 		{
 			GameObject::Activate();
 		}
+		
 	}
-
+	PowerUpTimer(pGameTime);
 
 	if (IsActive())
 	{
 		m_activationSeconds += pGameTime->GetTimeElapsed();
 		if (m_activationSeconds > 2 && !IsOnScreen()) Deactivate();
 	}
-	PowerUpTimer(pGameTime);
+	
 	GameObject::Update(pGameTime);
 }
 
@@ -53,15 +53,32 @@ void PowerUp::Initialize(const Vector2 position, const double delaySeconds)
 }
 
 
-void PowerUp::SpeedBooster() {
-
+void PowerUp::SpeedBooster() 
+{
+	GetSpeedBoostType();
+	SpeedBoostIsActive = true;
+	if (isActive != false)
+	{
+		if (SpeedBoostType == 1) //rand 
+		{
+			SetRandFireRate();
+		}
+		else if (SpeedBoostType == 2) //double
+		{
+			m_SpeedBoostAmount = 2;
+		}
+		else if (SpeedBoostType == 3) //triple
+		{
+			m_SpeedBoostAmount = 3;
+		}
+	}
 }
 
 
 void PowerUp::RapidFireMethod()
 {
 	GetRapidFireType();
-	
+	RapidFireIsActive = true;
 	if (isActive != false)
 	{
 		if (isStackable == true)
@@ -98,10 +115,6 @@ void PowerUp::RapidFireMethod()
 			}
 		}
 	}
-	else 
-	{
-		m_RapidFireRate = 1;
-	}
 }
 		
 
@@ -126,6 +139,16 @@ void PowerUp::GetRapidFireType()
 	}
 }
 
+void PowerUp::GetSpeedBoostType()
+{
+	int min = 1;
+	int max = 3;
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(min, max); //todo:adjust min and max
+	SpeedBoostType = dis(gen);
+}
+
 
 
 float PowerUp::SetRandFireRate() {
@@ -137,21 +160,14 @@ float PowerUp::SetRandFireRate() {
 	m_RapidFireRate = randFireRate;
 	return m_RapidFireRate;
 }
-//void ResetPowerUpTimer(){}
-
 
 void PowerUp::ActivatePowerUp()
 {
-	//if (m_type == SpeedBoost) {}
-	if (m_type == RapidFire) { isActive = true; RapidFireMethod(); }
-	//else if (m_type == Shield) {}
-	//else if (m_type == ExtraDamage) {}
-	/*else
-	{
-		m_type = none;
-	}
 	
-	when timer runs out set poweruptye to none*/
+	if (m_type == SpeedBoost) { isActive = true; SpeedBooster(); }
+		else if (m_type == RapidFire) { isActive = true; RapidFireMethod(); }
+		//else if (m_type == Shield) {}
+		//else if (m_type == ExtraDamage) {}	
 }
 
 void PowerUp::PowerUpTimer(const GameTime* pGameTime)
@@ -159,26 +175,41 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 
 	if (isActive == true)
 	{
-		
-		if (timerIsStarted == false)
+    	powerUpDuration -= pGameTime->GetTimeElapsed();
+		if (powerUpDuration <= 0)
 		{
-			start = pGameTime->GetTimeElapsed();
-			timerIsStarted = true;
-		}
-		end = pGameTime->GetTimeElapsed();
-
-		GetPowerUpDurationCalc();
-		if (currentPowerUpDuration >= 6)
-		{
-			isActive = false;
+ 			isActive = false;
+			timerIsStarted = false;
+			DeactivatePowerUp();
 		}
 	}
 }
 
-float PowerUp::GetPowerUpDurationCalc()
+void PowerUp::DeactivatePowerUp()
 {
-	currentPowerUpDuration = end - start;
-	return currentPowerUpDuration;
+	if (RapidFireIsActive == true)
+	{
+		m_RapidFireRate = 1;
+		RapidFireIsActive = false;
+	}
+	if (SpeedBoostIsActive == true)
+	{
+		m_SpeedBoostAmount = 1;
+		SpeedBoostIsActive = false;
+	}
+	m_type = none;
+	powerUpDuration = 6;
+}
+
+float PowerUp::SetRandSpeedBoost()
+{
+	float min = 1.0;
+	float max = 3.0;
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(min, max);
+	m_SpeedBoostAmount = randFireRate;
+	return m_SpeedBoostAmount;
 }
 //////git g
 
