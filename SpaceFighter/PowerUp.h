@@ -87,5 +87,6 @@ private:
 	time_t end;
 	float currentPowerUpDuration;
 	virtual float GetPowerUpDurationCalc();
+	bool useless;
 };
 
