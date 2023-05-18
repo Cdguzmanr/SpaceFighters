@@ -21,7 +21,7 @@ void PlayerShootsEnemy(GameObject* pObject1, GameObject* pObject2)
 
 		// Generate random power-up
 		int randomNum = Math::GetRandomInt(1, 10);
-		if (randomNum <= 3) // 30% chance of power-up
+		if (randomNum <= 10) // 30% chance of power-up
 			//push comment
 
 		{

@@ -188,6 +188,11 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
  			isActive = false;
 			timerIsStarted = false;
 			DeactivatePowerUp();
+			if (powerUpDuration <= 0)
+			{
+				std::cout << "Deactivating powerup";
+			}
+			
 		}
 	}
 }
