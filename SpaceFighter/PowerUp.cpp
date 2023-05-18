@@ -61,7 +61,7 @@ void PowerUp::SpeedBooster()
 	{
 		if (SpeedBoostType == 1) //rand 
 		{
-			SetRandFireRate();
+			SetRandSpeedBoost();
 		}
 		else if (SpeedBoostType == 2) //double
 		{
@@ -72,6 +72,27 @@ void PowerUp::SpeedBooster()
 			m_SpeedBoostAmount = 3;
 		}
 	}
+}
+
+void PowerUp::GetSpeedBoostType()
+{
+	int min = 1;
+	int max = 3;
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(min, max);
+	SpeedBoostType = dis(gen);
+}
+
+float PowerUp::SetRandSpeedBoost()
+{
+	float min = 1.0;
+	float max = 3.0;
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(min, max);
+	m_SpeedBoostAmount = dis(gen);
+	return m_SpeedBoostAmount;
 }
 
 
@@ -116,10 +137,6 @@ void PowerUp::RapidFireMethod()
 		}
 	}
 }
-		
-
-
-
 
 void PowerUp::GetRapidFireType()
 {
@@ -127,7 +144,7 @@ void PowerUp::GetRapidFireType()
 	int max = 6;
 	std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(min, max); //todo:adjust min and max
+    std::uniform_int_distribution<> dis(min, max); 
     
     RapidFireType = dis(gen);
 	if (RapidFireType <= 3)
@@ -139,18 +156,6 @@ void PowerUp::GetRapidFireType()
 	}
 }
 
-void PowerUp::GetSpeedBoostType()
-{
-	int min = 1;
-	int max = 3;
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dis(min, max); //todo:adjust min and max
-	SpeedBoostType = dis(gen);
-}
-
-
-
 float PowerUp::SetRandFireRate() {
 	float min = 2.0;
 	float max = 3.0;
@@ -161,6 +166,7 @@ float PowerUp::SetRandFireRate() {
 	return m_RapidFireRate;
 }
 
+
 void PowerUp::ActivatePowerUp()
 {
 	
@@ -169,6 +175,7 @@ void PowerUp::ActivatePowerUp()
 		//else if (m_type == Shield) {}
 		//else if (m_type == ExtraDamage) {}	
 }
+
 
 void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 {
@@ -185,6 +192,7 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 	}
 }
 
+
 void PowerUp::DeactivatePowerUp()
 {
 	if (RapidFireIsActive == true)
@@ -200,16 +208,4 @@ void PowerUp::DeactivatePowerUp()
 	m_type = none;
 	powerUpDuration = 6;
 }
-
-float PowerUp::SetRandSpeedBoost()
-{
-	float min = 1.0;
-	float max = 3.0;
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dis(min, max);
-	m_SpeedBoostAmount = dis(gen);
-	return m_SpeedBoostAmount;
-}
-//////git g
 
