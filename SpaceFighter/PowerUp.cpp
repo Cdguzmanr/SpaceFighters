@@ -185,9 +185,10 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
     	powerUpDuration -= pGameTime->GetTimeElapsed();
 		if (powerUpDuration <= 0)
 		{
- 			isActive = false;
+ 			
 			timerIsStarted = false;
 			DeactivatePowerUp();
+			isActive = false;
 			if (powerUpDuration <= 0)
 			{
 				std::cout << "Deactivating powerup";
@@ -200,12 +201,12 @@ void PowerUp::PowerUpTimer(const GameTime* pGameTime)
 
 void PowerUp::DeactivatePowerUp()
 {
-	if (RapidFireIsActive == true)
+	if (RapidFireIsActive)
 	{
 		m_RapidFireRate = 1;
 		RapidFireIsActive = false;
 	}
-	if (SpeedBoostIsActive == true)
+	if (SpeedBoostIsActive)
 	{
 		m_SpeedBoostAmount = 1;
 		SpeedBoostIsActive = false;

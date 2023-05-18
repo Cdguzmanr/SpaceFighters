@@ -23,7 +23,10 @@ void PlayerShip::Update(const GameTime* pGameTime)
 {
 	
 	// Get the velocity for the direction that the player is trying to go.
-	Vector2 targetVelocity = m_desiredDirection * GetSpeed() * GetCurrentLevel()->GetPowerUp()->GetSpeedBoost() * pGameTime->GetTimeElapsed();
+	PowerUp* currentPowerUp = GetCurrentLevel()->GetPowerUp();
+	float speedBoost = currentPowerUp ? currentPowerUp->GetSpeedBoost() : 1;
+	Vector2 targetVelocity = m_desiredDirection * GetSpeed() * speedBoost * pGameTime->GetTimeElapsed();
+
 	// We can't go from 0-100 mph instantly! This line interpolates the velocity for us.
 	m_velocity = Vector2::Lerp(m_velocity, targetVelocity, GetResponsiveness());
 	// Move that direction
