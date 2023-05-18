@@ -34,7 +34,6 @@ public:
 
 	virtual void SetCooldownBoost(const float boost)
 	{ 
-
 		m_cooldownBoost = boost;	
 	}
 	
@@ -54,27 +53,12 @@ public:
 					pProjectile->Activate(GetPosition(), true);
 					m_cooldown = m_cooldownSeconds;
 
-					int bulletCount{};
 					m_cooldownSeconds = (m_cooldownBoost > 0) ? 0.35 / m_cooldownBoost : 0.35;
-					std::cout << "Bullet count: " << bulletCount << "\n";
-					std::cout << "Fire Rate: " << m_cooldownSeconds << "\n";
-					bulletCount++;
 					
 				}
 			}
 		}
 	}
-	//void PowerUp::GetType(PlayerShip::PlayerShip playership)
-
-
-	/*PowerUp::PowerUp();
-	* 
-	/*PowerUp powerUp = PowerUp();
-
-	virtual PowerUp::PowerUpType GetType(PowerUp::PowerUpType* m_pType) const { return PowerUp::&m_pType; }
-
-	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::m_pType = type; }
-	virtual void SetType(const PowerUp::PowerUpType type) { PowerUp::PowerUpType->m_pType = type; }*/
 
 private:
 	

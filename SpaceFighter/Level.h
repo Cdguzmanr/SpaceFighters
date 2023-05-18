@@ -147,6 +147,8 @@ private:
 
 	virtual std::vector<GameObject*>* GetSectors() { return m_pSectors; }
 
+	PowerUp* pPowerUp = new PowerUp();
+
 	//static int m_skillsCounter;
 	//int m_scorePoints;
 };

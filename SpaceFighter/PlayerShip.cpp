@@ -1,6 +1,6 @@
 
 #include "PlayerShip.h"
-
+#include "Level.h"
 
 
 
@@ -21,8 +21,9 @@ void PlayerShip::LoadContent(ResourceManager* pResourceManager)
 
 void PlayerShip::Update(const GameTime* pGameTime)
 {
+	
 	// Get the velocity for the direction that the player is trying to go.
-	Vector2 targetVelocity = m_desiredDirection * GetSpeed() /*multiply by the speed bood*/ * pGameTime->GetTimeElapsed();
+	Vector2 targetVelocity = m_desiredDirection * GetSpeed() * GetCurrentLevel()->GetPowerUp()->GetSpeedBoost() * pGameTime->GetTimeElapsed();
 	// We can't go from 0-100 mph instantly! This line interpolates the velocity for us.
 	m_velocity = Vector2::Lerp(m_velocity, targetVelocity, GetResponsiveness());
 	// Move that direction
