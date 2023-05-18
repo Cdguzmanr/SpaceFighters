@@ -157,7 +157,7 @@ float PowerUp::SetRandFireRate() {
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dis(min, max);
-	m_RapidFireRate = randFireRate;
+	m_RapidFireRate = dis(gen);
 	return m_RapidFireRate;
 }
 
@@ -208,7 +208,7 @@ float PowerUp::SetRandSpeedBoost()
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dis(min, max);
-	m_SpeedBoostAmount = randFireRate;
+	m_SpeedBoostAmount = dis(gen);
 	return m_SpeedBoostAmount;
 }
 //////git g
