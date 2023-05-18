@@ -100,11 +100,5 @@ private:
 	double start;
 	double end;
 	float powerUpDuration = 6;
-
-	time_t start;
-	time_t end;
-	float currentPowerUpDuration;
-	virtual float GetPowerUpDurationCalc();
-	bool useless;
 };
 
